@@ -1,0 +1,342 @@
+/* ===== About Intro Section ===== */
+.about-intro {
+  position: relative;
+  background: linear-gradient(90deg, #fbb14d 0%, #f9aa31 100%);
+  color: #2b1409;
+  padding: clamp(3.5rem, 8vw, 5rem) 0;
+  overflow: visibl;
+}
+
+.about-intro .about-h2 {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.about-intro p {
+  font-size: clamp(.95rem, 2vw, 1.05rem);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Decorative blobs */
+.about-intro-blob {
+  position: absolute;
+  width: clamp(6rem, 18vw, 14rem);
+  height: auto;
+  opacity: .8;
+  pointer-events: none;
+}
+
+.about-intro-blob--left {
+  left: -2%;
+  bottom: -15%;
+  width: 20%;
+}
+
+.about-intro-blob--right {
+  right: 5%;
+  top: 10%;
+  width: 20%;
+}
+
+.about-intro-text2{
+  position: relative;
+  z-index: 1; 
+  margin-top: 15% !important;
+}
+
+/* ===== About: Our Legacy in Diagnostics ===== */
+.about-legacy{
+  background:#fff;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+  color:#2b1409;
+}
+
+/* Title */
+.legacy-title{
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  color:#e85d0f;
+}
+
+/* Maps block */
+.legacy-maps{
+  display:flex; flex-wrap:wrap;
+  gap: 1rem;
+  align-items:flex-start;
+}
+/* .legacy-map{
+  position:relative;
+  background:#fff;
+  border-radius:.75rem;
+  box-shadow: 0 .5rem 1.2rem rgba(0,0,0,.06);
+  overflow:hidden;
+} */
+.legacy-map--world{ flex: 1 1 60%; margin-top: 50% !important;}
+.legacy-map--india{ flex: 1 1 35%; }
+
+.legacy-map .map-pin{ width:5%; height:auto; display:block; margin-top: 20%;}
+
+/* Pins on the world map (tweak % to match your SVG) */
+.map-pin{
+  position:absolute; width: clamp(1.4rem, 3vw, 2.1rem); height:auto;
+  transform: translate(-50%, -100%);
+  filter: drop-shadow(0 .2rem .5rem rgba(0,0,0,.2));
+  pointer-events:none;
+}
+/* Example positions — adjust to your world SVG */
+.pin-mx{ left: 18%; top: 63%; }
+.pin-es{ left: 45%; top: 60%; }
+.pin-at{ left: 52%; top: 57%; }
+.pin-cl{ left: 26%; top: 76%; }
+.pin-in{ left: 70%; top: 65%; }
+
+/* Copy column */
+.legacy-copy{ max-width: 42rem; }
+.gd-logo{
+  width: clamp(9rem, 26vw, 14rem);
+  height:auto; display:block; margin: 0 0 .8rem;
+}
+.legacy-copy p{
+  font-size: clamp(.98rem, 1.9vw, 1.08rem);
+  line-height:1.65; margin-bottom: .8rem;
+}
+.legacy-list{
+  margin: 0; padding-left: 1.1rem;
+  font-size: clamp(.98rem, 1.9vw, 1.08rem);
+  line-height:1.65;
+}
+.legacy-list li{ margin: .2rem 0; }
+
+/* Accreditation strip */
+/* .legacy-acc{
+  margin-top: clamp(1.8rem, 5vw, 2.4rem);
+  padding-top: clamp(1rem, 2.5vw, 1.4rem);
+  border-top: .12rem solid rgba(226, 111, 21, .35);
+}
+.acc-title{
+  margin: 0 0 .8rem;
+  font-weight: 800; color:#e85d0f;
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+}
+/* .acc-logos{
+  display:grid;
+  grid-template-columns: repeat( auto-fit, minmax(7rem, 1fr) );
+  grid-gap: 1rem;
+  align-items:center; justify-items:center;
+} */
+.acc-logos img{
+  max-width: 100%; height: auto;
+  filter: grayscale(10%); opacity:.95;
+} */
+
+.about-accredit{
+  border-top: .12rem solid rgba(226, 111, 21, .35);
+  border-bottom: .12rem solid rgba(226, 111, 21, .35);
+  padding: 1rem 0;
+  background:#fff;
+}
+
+.acc-title{
+  font-weight: 700;
+  color:#e85d0f;
+  font-size: clamp(1.05rem, 2rem, 3rem);
+  margin: 0;
+}
+
+
+.acc-logos{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.acc-logos img{
+  max-height: 5rem;
+  width: auto;
+  flex: 1 1 auto;
+  object-fit: contain;
+  padding: 0 .6rem;
+  border-left: .12rem solid rgba(226, 111, 21, .35);
+}
+.acc-logos img:first-child{
+  border-left: none;
+  padding-left: 0;
+}
+
+.legacy-divider {
+    height: 1px;
+    background-color: #f18140;
+}
+
+/* Timeline image section */
+.about-timeline-img{
+  background:#fff;
+  padding: clamp(2rem, 6vw, 3.5rem) 0;
+}
+.about-timeline-img img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== About: Reliable Accuracy ===== */
+.about-accuracy{
+  position: relative;
+  background:#411c12;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+  color:#fff;
+  overflow:hidden;
+}
+
+.accuracy-title{
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  color:#f9aa31;
+  margin: 0 0 1rem;
+}
+
+.accuracy-sub{
+  font-size: clamp(.95rem, 2vw, 1.05rem);
+  color:#f5f5f5;
+  margin: 0 auto 2rem;
+  max-width: 45rem;
+}
+
+/* Logo grid inside orange border */
+.accuracy-card{
+  border: .15rem solid #f9aa31;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  background: rgba(255,255,255,0.02);
+  max-height: 40vw !important;
+  max-width: 90vw !important;
+}
+
+/* Decorative blobs */
+.accuracy-blob{
+  position: absolute;
+  width: clamp(5rem, 15vw, 10rem);
+  height: auto;
+  opacity:.85;
+  pointer-events:none;
+  z-index:1;
+  left: -2%;
+  bottom: -15% !important;
+  width: 20%;
+}
+.accuracy-blob--left{ left:0; top:50%; transform:translateY(-50%); }
+
+.about-accuracy .container{ position:relative; z-index:1; }
+
+
+/* === Mission & Vision === */
+.about-mission{
+  background:#fff;
+  color:#2b1409;
+  padding: clamp(2.5rem, 6vw, 4rem) 0 0;
+}
+
+/* Title */
+.mv-title{
+  font-weight: 800;
+  color:#e85d0f;
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 4.6vw, 3rem);
+  line-height: 1.15;
+}
+
+/* full-bleed responsive banner */
+.mv-banner{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* maintain breathing room between rows on all screens */
+  margin: 0 auto clamp(1.5rem, 4vw, 2.25rem);
+}
+.mv-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* two cards area */
+.mv-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0; /* Bootstrap gutters already present */
+}
+
+.mv-col{ display:flex; }
+.mv-card{
+  background:#fff;
+  border-radius: 1rem;
+  padding: clamp(1rem, 2.6vw, 1.6rem);
+  box-shadow: 0 .6rem 1.4rem rgba(0,0,0,.06);
+  border: .12rem solid rgba(0,0,0,.06);
+  width: 100%;
+  text-align: left;
+}
+
+.mv-icon{
+  color:#e85d0f;
+  width: clamp(3rem, 7vw, 4.25rem);
+  height: clamp(3rem, 7vw, 4.25rem);
+  margin-bottom: .5rem;
+}
+.mv-icon svg{ width:100%; height:100%; display:block; }
+
+.mv-heading{
+  font-weight: 800;
+  color:#e85d0f;
+  margin: .1rem 0 .35rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+}
+
+.mv-text{
+  color:#444;
+  line-height: 1.65;
+  font-size: clamp(.98rem, 1.9vw, 1.08rem);
+  margin: 0;
+}
+
+
+/* Tablet: add a bit more spacing between columns */
+@media (max-width: 991px){
+  .about-intro .row > [class*="col-"]{ margin-bottom: 1rem; }
+   .legacy-maps{ gap: .8rem; }
+}
+
+/* Phones: center text and hide blobs to avoid crowding */
+@media (max-width: 767px){
+  .about-intro{ text-align: left; }      /* or center if you prefer */
+  .about-intro-blob{ display: none; }
+  .legacy-map--world, .legacy-map--india{ flex-basis: 100%; }
+  .acc-logos{ grid-template-columns: repeat(2, 1fr); }
+    .acc-logos{
+    justify-content: center;
+  }
+  .acc-logos img{
+    border-left: none;
+    padding: 0 .8rem;
+    max-height: 2.5rem;
+  }
+  .acc-title{
+    text-align: center;
+    margin-bottom: .8rem;
+  }
+
+  .mv-card{ text-align:left; }
+  .mv-title{ margin-bottom: 1rem; }
+}

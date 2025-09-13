@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plutogenix | Login</title>
+
+    <!-- Fonts & Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Site styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar include -->
+    <div id="navbar-container"></div>
+
+    <!-- Login Hero -->
+    <section class="login-hero">
+        <div class="container">
+            <div class="row middle-xs">
+                <!-- Left: form -->
+                <div class="col-xs-12 col-md-6">
+                    <div class="login-box">
+                        <h1 class="login-title">Login</h1>
+                        <p class="login-sub">Enter Plutogenix. Bringing smarter veterinary diagnostics to more pets,
+                            together.</p>
+
+                        <!-- Role toggle -->
+                        <div class="login-role">
+                            <!-- <label class="role-pill is-active">
+                <input type="radio" name="role" value="owner" checked> Pet owner
+              </label> -->
+                            <label class="role-pill">
+                                <input type="radio" name="role" value="franchisee"> Franchisee
+                            </label>
+                        </div>
+
+                        <!-- Form -->
+                        <form class="login-form" action="#" method="post" novalidate>
+                            <div class="form-group">
+                                <input type="text" class="form-control input-pill" placeholder="Email ID/Mobile"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control input-pill" placeholder="Password" required>
+                            </div>
+
+                            <div class="login-links">
+                                <a href="#" class="login-link">Forgot Your Password?</a>
+                            </div>
+
+                            <button type="submit" class="btn btn-cta btn-login-primary">Sign In</button>
+
+                            <p class="login-alt">Already have an account? <a href="#login" class="login-link">Login</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: illustration -->
+                <div class="col-xs-12 col-md-6">
+                    <div class="login-illustration">
+                        <!-- replace with your composite image -->
+                        <img src="assets/loginhome.png" alt="Welcome to Plutogenix" class="img-responsive center-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer include (contact card + links) -->
+    <div id="footer-container"></div>
+
+    <!-- jQuery + Bootstrap -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Includes + small interactions -->
+    <script>
+        // navbar
+        fetch('navbar.html').then(r => r.text()).then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+            (function ($) {
+                $('#pgx-nav a').on('click', function () {
+                    if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+                });
+            })(jQuery);
+        });
+
+        // footer
+        fetch('footer.html').then(r => r.text()).then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+            var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+        });
+
+        // role pill toggle (purely visual)
+        document.addEventListener('change', function (e) {
+            if (e.target && e.target.name === 'role') {
+                [].forEach.call(document.querySelectorAll('.role-pill'), function (p) {
+                    p.classList.remove('is-active');
+                });
+                e.target.closest('.role-pill').classList.add('is-active');
+            }
+        });
+    </script>
+</body>
+
+</html>
