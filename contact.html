@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plutogenix | Contact Us</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+
+<body data-page="contact">
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact-page">
+    <div class="container">
+      <h1 class="contact-title text-center">Contact Us</h1>
+      <p class="contact-sub text-center">
+        Reach out to us for queries and feedback related to<br>
+        veterinary diagnostic tests and reports.
+      </p>
+
+      <form class="row contact-form" action="#" method="post" novalidate>
+        <div class="col-xs-12 col-sm-4">
+          <label>First Name</label>
+          <input type="text" class="form-control input-soft" placeholder="Input your first name in here" required>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <label>Last Name</label>
+          <input type="text" class="form-control input-soft" placeholder="Input your last name in here" required>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <label>Email Address</label>
+          <input type="email" class="form-control input-soft" placeholder="Input your email address in here" required>
+        </div>
+
+        <div class="col-xs-12">
+          <label>Messages</label>
+          <textarea class="form-control input-soft textarea-soft" rows="7" placeholder="Write your messages in here"></textarea>
+        </div>
+
+        <div class="col-xs-12 text-center">
+          <button type="submit" class="btn btn-send">Send Messages</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Decorative blobs -->
+    <img src="assets/contactblob-left.svg"  alt="" class="contact-blob contact-blob--left">
+    <img src="assets/contactblob-right.svg" alt="" class="contact-blob contact-blob--right">
+  </section>
+
+  <!-- ===== Footer Panel (half footer) ===== -->
+  <div class="footer-panel">
+    <div class="container">
+      <div class="row footer-top">
+        <div class="col-sm-3">
+          <img src="assets/logo.png" alt="Plutogenix" class="footer-logo">
+          <p class="footer-blurb">India’s breed-smart veterinary diagnostics lab.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="soc">f</a>
+            <a href="#" aria-label="Instagram" class="soc">◎</a>
+            <a href="#" aria-label="YouTube" class="soc">▶</a>
+            <a href="#" aria-label="LinkedIn" class="soc">in</a>
+          </div>
+        </div>
+
+        <div class="col-sm-2 col-xs-6">
+          <h5 class="footer-head">Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="order.html">Book a Test</a></li>
+            <li><a href="reports.html">Download App</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-2 col-xs-6">
+          <h5 class="footer-head">Tests</h5>
+          <ul class="footer-links">
+            <li><a href="#">Clinical Pathology</a></li>
+            <li><a href="#">Microbiology</a></li>
+            <li><a href="#">Histopathology</a></li>
+            <li><a href="#">Toxicology</a></li>
+            <li><a href="#">Endocrinology</a></li>
+            <li><a href="#">Urinalysis</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-2 col-xs-6">
+          <h5 class="footer-head">Tests</h5>
+          <ul class="footer-links">
+            <li><a href="#">Serology &amp; Immunology</a></li>
+            <li><a href="#">Molecular Diagnostics</a></li>
+            <li><a href="#">Genetic Testing</a></li>
+            <li><a href="#">Biochemical Genetics</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+          <h5 class="footer-head">Contact</h5>
+          <ul class="footer-links">
+            <li><span class="glyphicon glyphicon-earphone"></span> +91 989 456 7890</li>
+            <li><span class="glyphicon glyphicon-envelope"> support@plutogenix.com</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row footer-bottom">
+        <div class="col-sm-6">
+          <p class="copy">© <span id="year"></span> Plutogenix. All rights reserved.</p>
+        </div>
+        <div class="col-sm-6 text-right">
+          <ul class="legal-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Legal</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    // Load navbar and mark "Contact" as active
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+      (function ($) {
+        $('#pgx-nav a').on('click', function () {
+          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+        });
+      })(jQuery);
+      var current = document.body.getAttribute('data-page') || '';
+      document.querySelectorAll('.pgx-menu > li').forEach(function (li) {
+        li.classList.toggle('active', li.getAttribute('data-page') === current);
+      });
+    });
+
+    // year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
