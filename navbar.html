@@ -12,7 +12,7 @@
     </div>
     <div class="collapse navbar-collapse" id="pgx-nav">
       <ul class="nav navbar-nav pgx-menu">
-        <li class="active"><a href="/index.html">Home</a></li>
+        <li><a href="/index.html">Home</a></li>
         <li><a href="/about.html">About Us</a></li>
         <li><a href="/services.html">Services</a></li>
         <li><a href="/order.html">Order a Test</a></li>
@@ -26,3 +26,20 @@
     </div>
   </div>
 </nav>
+
+<!-- <script>
+
+  (function() {
+    var path = window.location.pathname.split("/").pop(); 
+    if (path === "") path = "index.html"; 
+
+    document.querySelectorAll(".pgx-menu li a").forEach(function(link) {
+      var href = link.getAttribute("href");
+      if (href && href.indexOf(path) !== -1) {
+        link.parentElement.classList.add("active");
+      } else {
+        link.parentElement.classList.remove("active");
+      }
+    });
+  })();
+</script> -->
