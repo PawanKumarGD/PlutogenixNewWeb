@@ -53,6 +53,7 @@ body {
   padding: 0.6rem 1.2rem;
   font-weight: 700;
   border-radius: 0.5rem;
+  min-height: 1rem;
 }
 
 .btn-login:hover {
@@ -91,7 +92,7 @@ body {
 
 .hero-title {
   color: #fff;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   font-size: clamp(1.8rem, 4vw, 4rem);
   text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.18);
@@ -113,13 +114,14 @@ body {
 }
 
 .btn-cta {
-  background: #ff7a1a;
-  color: #fff;
-  border: none;
+  background: linear-gradient(80deg, #F9AD32 5%, #F58A21 95%);
+  color: #4A2015;
+  border: 1px;
+  border-radius: 15px !important;
 }
 
 .btn-cta:hover {
-  background: #ff6b00;
+  background: #ffb648;
 }
 
 .btn-ghost {
@@ -144,23 +146,23 @@ body {
 }
 
 .section-title {
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1rem;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.5rem, 3.2vw, 4.25rem);
   line-height: 1.2;
 }
 
 /* Why Choose */
 .why-choose {
-  background: linear-gradient(90deg, #fbb14d 0%, #f9aa31 100%);
+  background: linear-gradient(90deg, #f69727 0%, #f9aa31 100%);
   color: #fff;
   overflow: hidden;
   position: relative;
 }
 
 .why-choose .section-title {
-  color: #3a1f00;
-  margin-bottom: rem;
+  color: #4A2015;
+  margin-bottom: 1rem;
 }
 
 .features-row {
@@ -230,7 +232,7 @@ body {
 
 .feature-text {
   margin: 1rem 0;
-  color: #f9f9f9;
+  color: #4A2015;
   font-size: clamp(0.9rem, 1.8vw, 1rem);
   line-height: 1.6;
   flex-grow: 1;
@@ -283,8 +285,8 @@ body {
 
 /* icon in a red circle */
 .benefit-icon {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   background: #e53935;
   /* red tone for icon circle */
@@ -306,13 +308,13 @@ body {
   margin: 0 0 .4rem;
   font-weight: 800;
   line-height: 1.1;
-  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.75rem);
   color: #d2232a;
   /* deep red title to match screenshot */
 }
 
 .benefit-text {
-  color: #3e3e3e;
+  color: #4A2015;
   font-size: clamp(.9rem, 1.8vw, 1rem);
   line-height: 1.55;
   margin: 0;
@@ -372,12 +374,12 @@ body {
 }
 
 .btn-range {
-  background: #f9aa31;
+  background: linear-gradient(80deg, #F9AD32 5%, #F58A21 95%);
   /* your brand orange */
-  color: #3b170f;
+  color: #4A2015;
   font-weight: 700;
   padding: .8rem 1.6rem;
-  border-radius: 999px;
+  border-radius: 15px;
   /* pill */
   border: none;
   box-shadow: 0 .35rem 1.25rem rgba(0, 0, 0, .18) inset,
@@ -443,18 +445,17 @@ body {
 }
 
 .btn-browse {
-  background: #f9aa31;
-  color: #fff;
+  background: linear-gradient(80deg, #F9AD32 5%, #F58A21 95%);
+  color: #4A2015;
   font-weight: 700;
   padding: .8rem 1.6rem;
-  border-radius: .5rem;
   border: none;
-  transition: .25s ease;
+  border-radius: 15px;
 }
 
 .btn-browse:hover {
   background: #ffb648;
-  color: #fff;
+  color: #4A2015;
 }
 
 /* Pets row */
@@ -590,8 +591,8 @@ body {
 
 /* Store button */
 .btn-store {
-  background: #f9aa31;
-  color: #3b170f !important;
+  background:linear-gradient(80deg, #F9AD32 5%, #F58A21 95%);
+  color: #4A2015 !important;
   font-weight: 700;
   padding: .7rem 1.2rem;
   border-radius: .65rem;
@@ -602,7 +603,7 @@ body {
 
 .btn-store:hover {
   background: #ffc052;
-  color: #3b170f !important;
+  color: #4A2015 !important;
 }
 
 
@@ -615,10 +616,11 @@ body {
 }
 
 .testi-title {
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.2;
   font-size: clamp(1.8rem, 4.8vw, 2.8rem);
   margin: 0 0 2rem;
+  color: #4A2015 !important;
 }
 
 /* Slider viewport + track */
@@ -760,7 +762,7 @@ body {
 
 /* Card heading */
 .contact-title {
-  font-weight: 800;
+  font-weight: 700;
   margin: 0 0 .8rem;
   font-size: clamp(1.25rem, 3.3vw, 1.6rem);
 }
@@ -779,8 +781,8 @@ body {
 }
 
 .contact-btn {
-  background: #f9aa31;
-  color: #3b170f !important;
+  background:linear-gradient(80deg, #F9AD32 5%, #F58A21 95%);
+  color: #4A2015 !important;
   border-radius: .7rem;
   padding: .7rem 1.2rem;
   border: none;
@@ -808,14 +810,14 @@ body {
 }
 
 .footer-blurb {
-  color: #555;
+  color: #4A2015;
   margin-bottom: .8rem;
 }
 
 .footer-head {
   font-weight: 800;
   margin: 0 0 .6rem;
-  color: #3b170f;
+  color: #4A2015;
 }
 
 .footer-links {
@@ -826,11 +828,11 @@ body {
 
 .footer-links li {
   margin: .25rem 0;
-  color: #444;
+  color: #4A2015;
 }
 
 .footer-links a {
-  color: #444;
+  color: #4A2015;
   text-decoration: none;
 }
 
@@ -859,7 +861,7 @@ body {
 
 .copy {
   margin: 0;
-  color: #666;
+  color: #4A2015;
 }
 
 .legal-links {
@@ -874,7 +876,7 @@ body {
 }
 
 .legal-links a {
-  color: #666;
+  color: #4A2015;
   text-decoration: none;
 }
 
@@ -902,8 +904,8 @@ body {
 }
 
 .login-box {
-  background: rgba(255, 255, 255, .15);
-  border-radius: 1rem;
+  /* background: rgba(255, 255, 255, .15);
+  border-radius: 1rem; */
   padding: clamp(1rem, 2.5vw, 1.6rem);
   backdrop-filter: blur(0px);
   /* safe fallback when unsupported */
@@ -911,13 +913,14 @@ body {
 
 .login-title {
   margin: 0 0 .25rem;
-  font-weight: 800;
-  color: #24110c;
+  font-weight: 700;
+  color: #4A2016;
   font-size: clamp(1.5rem, 3.6vw, 2rem);
+  text-align: center;
 }
 
 .login-sub {
-  color: #5b2d1f;
+  color: #4A2016;
   margin: 0 0 1rem;
   font-size: clamp(.95rem, 2.2vw, 1.05rem);
 }
@@ -1018,6 +1021,7 @@ body {
   height: auto;
   display: block;
   margin-left: auto;
+  transform: scaleX(-1);
 }
 
 /* bring footer card overlap comfortably under this section */
@@ -1236,6 +1240,11 @@ body {
 
 /* Responsive tweaks */
 @media (max-width: 767px) {
+
+  .pgx-navbar .navbar-brand img {
+    height: 2.5rem;
+    max-width: 100%;
+}
   .features-row {
     display: block;
   }
