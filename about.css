@@ -244,6 +244,7 @@
   background:#fff;
   color:#2b1409;
   padding: clamp(2.5rem, 6vw, 4rem) 0 0;
+  margin-bottom: 5%;
 }
 
 /* Title */

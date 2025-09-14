@@ -11,6 +11,9 @@ body {
   line-height: 1.6;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
 
 /* Optional: tighten link padding slightly so the first link sits closer */
 .pgx-navbar .navbar-nav>li>a {
@@ -465,33 +468,27 @@ body {
   object-fit: cover;
 }
 
-/* --- Reports & App (phones with screens inside frames) --- */
-.app-promo {
+/* ===== Home: Reports & App ===== */
+.app-band {
   background: #4a2118;
-  /* deep brown band */
+  /* deep brown */
   color: #fff;
-  padding: clamp(4rem, 9vh, 6rem) 0;
+  padding: clamp(3.2rem, 8vw, 5.5rem) 0;
   overflow: hidden;
 }
 
-.app-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Phones area */
+/* --- Phones --- */
 .app-mocks {
   position: relative;
-  min-height: clamp(12rem, 40vh, 30rem);
-  margin-bottom: 2rem;
+  min-height: clamp(14rem, 55vh, 25rem);
+  margin-bottom: 0rem;
 }
 
-/* Generic phone wrapper */
 .phone {
   position: absolute;
   width: 56%;
-  /* filter: drop-shadow(0 .5rem 1.25rem rgba(0,0,0,.25)); */
+  filter: drop-shadow(0 .6rem 1.6rem rgba(0, 0, 0, .35));
+  /* default insets for screen (tweak per frame below) */
   --screen-top: 6.6%;
   --screen-left: 5.7%;
   --screen-right: 5.7%;
@@ -499,113 +496,114 @@ body {
   --screen-radius: 2rem;
 }
 
-/* Overlap positions (match your comp) */
 .phone--back {
   left: 0;
-  top: 4%;
-  transform: scale(.985);
+  top: 5%;
+  transform: scale(.995);
   z-index: 1;
 }
 
 .phone--front {
-  left: 10%;
+  left: 18%;
   top: 22%;
   z-index: 2;
 }
 
-/* Frame: PNG with transparent screen hole */
+/* Frame (PNG with transparent cutout) */
 .phone-frame {
-  position: relative;
-  z-index: 2;
   display: block;
-  width: 100%;
+  width: 135%;
   height: auto;
+  position: relative;
+  z-index: 0;
 }
 
-/* Screen image fits *inside* the bezel using insets */
+/* Screen sits BEHIND the frame, inside cutout using insets */
 .phone-screen {
   position: absolute;
   z-index: 1;
-  /* behind the frame so it shows through */
   top: var(--screen-top);
   left: var(--screen-left);
   right: var(--screen-right);
   bottom: var(--screen-bottom);
-  border-radius: var(--screen-radius);
-  width: auto;
+  width: 80%;
   height: auto;
+  border-radius: var(--screen-radius);
   object-fit: cover;
-  /* fills neatly, cropping if needed */
 }
 
-/* Per-phone fine tuning (adjust if your frames differ) */
+.phone-screen1 {
+  position: absolute;
+  z-index: 1;
+  top: var(--screen-top);
+  left: var(--screen-left);
+  right: var(--screen-right);
+  bottom: var(--screen-bottom);
+  width: 60%;
+  height: auto;
+  border-radius: var(--screen-radius);
+  object-fit: cover;
+}
+
+/* Per-phone fine tune (nudge if your frames differ) */
 .phone--back {
-  --screen-top: 6.8%;
-  --screen-left: 5.9%;
+  --screen-top: 15.6%;
+  --screen-left: 24.5%;
   --screen-right: 5.9%;
-  --screen-bottom: 11.2%;
-  --screen-radius: 2.1rem;
+  --screen-bottom: 11.4%;
+  --screen-radius: 2.05rem;
 }
 
 .phone--front {
-  --screen-top: 6.2%;
-  --screen-left: 5.5%;
+  --screen-top: 47%;
+  --screen-left: 33%;
   --screen-right: 5.5%;
   --screen-bottom: 10.4%;
   --screen-radius: 2rem;
 }
 
-/* Copy column */
-.app-copy {
-  position: relative;
-  z-index: 3;
-}
-
+/* --- Copy --- */
 .app-title {
   font-weight: 800;
-  line-height: 1.15;
-  font-size: clamp(1.8rem, 4.8vw, 2.6rem);
-  margin: 0 0 1rem;
+  line-height: 1.1;
+  margin: 0 0 .6rem;
+  font-size: clamp(1.8rem, 4.8vw, 2.8rem);
 }
 
 .app-text {
   color: rgba(255, 255, 255, .85);
-  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   line-height: 1.65;
   margin: 0 0 1.5rem;
-  max-width: 40rem;
+  max-width: 36rem;
 }
 
 .app-download {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: .75rem;
 }
 
 .app-label {
   color: rgba(255, 255, 255, .8);
-  font-size: .95rem;
-  margin-right: .5rem;
 }
 
 /* Store button */
 .btn-store {
   background: #f9aa31;
-  /* brand orange */
   color: #3b170f !important;
   font-weight: 700;
   padding: .7rem 1.2rem;
-  border-radius: .6rem;
+  border-radius: .65rem;
   border: none;
   box-shadow: 0 .25rem .85rem rgba(0, 0, 0, .18) inset,
     0 .25rem .85rem rgba(0, 0, 0, .12);
 }
 
 .btn-store:hover {
-  background: #ffb648;
+  background: #ffc052;
   color: #3b170f !important;
 }
-
 
 
 /* === Testimonials === */
@@ -734,7 +732,7 @@ body {
 .contact-wrap {
   background: #f7f7f7;
   position: relative;
-  padding-top: clamp(5rem, 16vh, 10rem);
+  padding-top: clamp(5rem, 8vh, 10rem);
   /* space for the overlap */
   padding-bottom: 0;
 }
@@ -792,7 +790,7 @@ body {
 /* Footer panel with rounded border */
 .footer-panel {
   position: relative;
-  margin-top: -18vh;
+  margin-top: -30vh;
   /* pull panel up under the overlapped card */
   padding-top: clamp(3rem, 6vw, 4rem);
   padding-bottom: clamp(2rem, 5vw, 3rem);
@@ -1023,10 +1021,10 @@ body {
 }
 
 /* bring footer card overlap comfortably under this section */
-#contact.contact-wrap {
-  margin-top: -8vh;
-  /* lets footer's orange contact card overlap up */
-}
+/* #contact.contact-wrap {
+  margin-top: -8vh; */
+/* lets footer's orange contact card overlap up */
+/* } */
 
 /* ===== About page ===== */
 
@@ -1295,11 +1293,11 @@ body {
     opacity: .7;
   }
 
-  .app-row {
+  /* .app-row {
     align-items: flex-start;
-  }
+  } */
 
-  .app-mocks {
+  /* .app-mocks {
     min-height: clamp(12rem, 40vw, 18rem);
     margin-bottom: 1rem;
   }
@@ -1324,6 +1322,33 @@ body {
   .app-label {
     display: block;
     margin: 0 0 .5rem;
+  } */
+
+  .app-mocks {
+    min-height: clamp(12rem, 45vw, 18rem);
+  }
+
+  .phone {
+    width: 64%;
+  }
+
+  .phone--back {
+    left: 0;
+    top: 2%;
+  }
+
+  .phone--front {
+    left: 26%;
+    top: 22%;
+  }
+
+  .app-download {
+    display: block;
+  }
+
+  .app-label {
+    display: block;
+    margin-bottom: .5rem;
   }
 
   .testi-track {
@@ -1350,7 +1375,11 @@ body {
   }
 
   .contact-card {
-    transform: translateY(-18%);
+    transform: translateY(-25%);
+  }
+
+  .footer-top .col-sm-3 {
+    margin-top: 20%;
   }
 
   /* =======Login Page===== */
