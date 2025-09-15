@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plutogenix | FAQs</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ordertest.css" />
+</head>
+
+<body data-page="faqs">
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+   <div class="order-container">
+      <div class="order-inner1">
+        <img src="assets/Maskgroup.png" alt="hand" class="order-inner" />
+      </div>
+      <div class="order-inner2">
+        <div class="book">Book A Test</div>
+        <div class="fast">Fastest and easiest way to order a test.</div>
+        <div class="report">Reports in 24 hours.</div>
+        <div class="downloadbutt">
+          <a class="download" href="/index.html">Download App</a>
+        </div>
+      </div>
+    </div>
+    <!-- everyday test card section -->
+    <section class="tests-section">
+      <h2 class="tests-title">Everyday Tests</h2>
+      <p class="tests-subtitle">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+
+      <div class="tests-grid">
+        <div class="test-card">
+          <img src="assets/microbiology.png" alt="Microbiology" />
+          <div class="overlay1">Microbiology</div>
+        </div>
+
+        <div class="test-card">
+          <img src="assets/toxicology.jpg" alt="Toxicology" />
+          <div class="overlay2">Toxicology</div>
+        </div>
+
+        <div class="test-card">
+          <img src="assets/histopathology.jpg" alt="Histopathology" />
+          <div class="overlay1">Histopathology</div>
+        </div>
+
+        <div class="test-card">
+          <img src="assets/urinalysis.jpg" alt="Urinalysis" />
+          <div class="overlay2">Urinalysis</div>
+        </div>
+      </div>
+
+       <div class="dots">••••</div>
+    </section>
+<!-- Most Ordered Tests -->
+<section class="tests-section">
+  <h2 class="tests-title">Most Ordered <span>Tests</span></h2>
+  <p class="tests-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+  <div class="tests-grid">
+    <div class="test-card">
+      <img src="assets/urine.jpg" alt="Urine Tests">
+      <div class="overlay1">Urine Tests</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/skin.jpg" alt="Skin Scrapings">
+      <div class="overlay2">Skin Scrapings</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/blood.jpg" alt="Blood Tests">
+      <div class="overlay1">Blood Tests</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/faecal.jpg" alt="Faecal Tests">
+      <div class="overlay2">Faecal Tests</div>
+    </div>
+  </div>
+
+  <div class="dots">••••</div>
+</section>
+
+
+<!-- Health Conditions -->
+<section class="tests-section">
+  <h2 class="tests-title">Health <span>Conditions</span></h2>
+  <p class="tests-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+  <div class="tests-grid">
+    <div class="test-card">
+      <img src="assets/infections.jpg" alt="Infections">
+      <div class="overlay1">Infections</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/obesity.jpg" alt="Obesity">
+      <div class="overlay2">Obesity</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/allergies.jpg" alt="Allergies">
+      <div class="overlay1">Allergies</div>
+    </div>
+
+    <div class="test-card">
+      <img src="assets/diabetes.jpg" alt="Diabetes">
+      <div class="overlay2">Diabetes</div>
+    </div>
+  </div>
+
+  <div class="dots">••••</div>
+</section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    // Load navbar and mark active
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+      (function ($) {
+        $('#pgx-nav a').on('click', function () {
+          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+        });
+      })(jQuery);
+      var current = document.body.getAttribute('data-page') || '';
+      document.querySelectorAll('.pgx-menu > li').forEach(function (li) {
+        li.classList.toggle('active', li.getAttribute('data-page') === current);
+      });
+    });
+
+    // Load footer
+    fetch('footer.html').then(r => r.text()).then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+
+    // -------- FAQs interactions --------
+    (function () {
+      // Accordion toggle
+      document.querySelectorAll('.faq-q').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var card = btn.parentElement;
+          var ans = card.querySelector('.faq-a');
+          var open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', !open);
+          ans.style.display = open ? 'none' : 'block';
+          btn.querySelector('.faq-toggle').textContent = open ? '+' : '×';
+        });
+      });
+
+      // Category filter
+      var tabs = document.querySelectorAll('.faqs-tabs li');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('is-active'); });
+          tab.classList.add('is-active');
+          var cat = tab.getAttribute('data-cat');
+          document.querySelectorAll('.faq-card').forEach(function (c) {
+            if (cat === 'all') { c.style.display = ''; return; }
+            var cats = (c.getAttribute('data-cat') || '').split(/\s+/);
+            c.style.display = cats.indexOf(cat) > -1 ? '' : 'none';
+          });
+        });
+      });
+
+      // Search filter (client-side)
+      var input = document.getElementById('faqSearch');
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase();
+        document.querySelectorAll('.faq-card').forEach(function (c) {
+          var txt = c.textContent.toLowerCase();
+          c.style.display = txt.indexOf(q) > -1 ? '' : 'none';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
