@@ -1,0 +1,124 @@
+:root{
+  --brand-orange: #f84e1c;
+  --brand-text: #3a1d00;
+  --card-bg: #ffffff;
+  --shadow: 0 0 1rem rgba(0,0,0,0.08);
+  --max-container: 72rem;
+}
+
+html { font-size: 100%; }
+body {
+  margin: 0;
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  color: var(--brand-text);
+  background: #fff6dd;
+  line-height: 1.5;
+}
+
+/* Wrapper width uses %/vw with a max in rem */
+.wrap {
+  width: min(92vw, var(--max-container));
+  margin-inline: auto;
+}
+
+/* Sections */
+.resources-section { padding: clamp(2rem, 6vw, 4rem) 0; }
+.resources-section.alt { padding-top: clamp(1.25rem, 3vw, 2rem); }
+
+.resources-title{
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: #4A2016;
+}
+
+/* Grid */
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: stretch;
+}
+
+/* Cards */
+.resource-card{
+  grid-column: span 12;
+  background: var(--brand-orange);
+  border-radius: 0.6rem;
+  padding: clamp(1rem, 2.5vw, 1.25rem);
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(18rem, 30vw, 26rem);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.card-content{
+  background: var(--card-bg);
+  padding: clamp(0.9rem, 2.2vw, 1rem);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.card-content h2{
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  font-weight: 700;
+  color: #4A2016;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.35;
+}
+
+.card-content p{
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  color: #555;
+  margin: 0 0 0.75rem 0;
+}
+
+.read-more{
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  color: var(--brand-orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Decorative DNA blobs */
+.decorative-image-wrapper{
+  width: 100%;
+  text-align: center;
+  margin: clamp(-10%, -12vw, -15%) 0 clamp(1rem, 3vw, 1.25rem);
+  position: relative;
+  z-index: 0;
+}
+.decorative-image-wrapper.mid{
+  margin: clamp(-6%, -8vw, -10%) 0 clamp(1.25rem, 3.5vw, 1.75rem);
+}
+.decorative-image-wrapper.overlap{
+  margin: clamp(-8%, -10vw, -13%) 0 clamp(2rem, 5vw, 3rem);
+}
+.decorative-image{
+  width: min(65vw, 34rem);
+  max-width: 100%;
+  height: auto;
+  opacity: .9;
+  display: inline-block;
+}
+
+/* Squeezed (overlap) grid */
+.card-grid.squeezed{
+  /* margin-top: clamp(-6%, -8vw, -10%); */
+  margin-top: clamp(-20%, -14vw, 28%);
+  margin-bottom: 5%;
+}
+
+/* Breakpoints via rem to stay unit-consistent */
+@media (min-width: 40rem){ /* ~640px */
+  .resource-card{ grid-column: span 6; }
+  .card-grid.squeezed .resource-card{ grid-column: span 4; }
+}
+
+@media (min-width: 64rem){ /* ~1024px */
+  .resource-card{ grid-column: span 4; }
+  .card-grid.squeezed .resource-card{ grid-column: span 4; }
+}
