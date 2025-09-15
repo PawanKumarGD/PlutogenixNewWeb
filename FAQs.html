@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plutogenix | FAQs</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="faqs">
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- ===== FAQs Section ===== -->
+  <section class="faqs-wrap">
+    <div class="container">
+
+      <h1 class="faqs-title text-center">Frequently Asked Questions</h1>
+
+      <!-- Category tabs -->
+      <ul class="faqs-tabs">
+        <li class="is-active" data-cat="all">Services</li>
+        <li data-cat="booking">Booking</li>
+        <li data-cat="samples">Samples</li>
+        <li data-cat="reports">Reports</li>
+        <li data-cat="payments">Payments</li>
+        <li data-cat="general">General</li>
+      </ul>
+
+      <!-- Search -->
+      <div class="faqs-search">
+        <span class="glyphicon glyphicon-search"></span>
+        <input id="faqSearch" type="search" placeholder="Ask" />
+      </div>
+
+      <!-- Two-column grid of accordion cards -->
+      <div class="row faqs-grid">
+        <!-- LEFT column -->
+        <div class="col-xs-12 col-sm-6">
+          <div class="faq-card" data-cat="services general">
+            <button class="faq-q" aria-expanded="true">
+              <span>What kind of animals do you test for?</span>
+              <span class="faq-toggle">×</span>
+            </button>
+            <div class="faq-a" style="display:block;">
+              We cover pets, farm animals, and even equines. Each report is tuned to the species and
+              breed, so results actually make sense for your animal.
+            </div>
+          </div>
+
+          <div class="faq-card" data-cat="reports">
+            <button class="faq-q">
+              <span>How long do reports take?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              Turnaround time depends on the test panel. Routine tests are typically available within
+              24–48 hours; specialised genetics panels take longer.
+            </div>
+          </div>
+
+          <div class="faq-card" data-cat="general">
+            <button class="faq-q">
+              <span>Are your reports different from regular labs?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              Yes. Our breed-smart reference ranges and vet-centric format make results easier to act on,
+              compared with generic human-style reports.
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT column -->
+        <div class="col-xs-12 col-sm-6">
+          <div class="faq-card" data-cat="booking">
+            <button class="faq-q">
+              <span>How do I book a test?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              You can book through your vet or directly with us. Once booked, our team schedules a
+              doorstep pickup at your convenience.
+            </div>
+          </div>
+
+          <div class="faq-card" data-cat="general">
+            <button class="faq-q">
+              <span>What makes Plutogenix™ reliable?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              We use world-class instruments, calibrated controls, and QA programs from global
+              institutions—plus species-specific benchmarking.
+            </div>
+          </div>
+
+          <div class="faq-card" data-cat="reports payments">
+            <button class="faq-q">
+              <span>How do I receive the reports?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              Reports are shared digitally in the app and by email. Your vet receives them too, so
+              treatment decisions can be made quickly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative blobs -->
+    <img src="assets/faq-left-blob.svg"  alt="" class="faq-blob faq-blob--left">
+    <img src="assets/faq-right-blob.svg" alt="" class="faq-blob faq-blob--right">
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    // Load navbar and mark active
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+      (function ($) {
+        $('#pgx-nav a').on('click', function () {
+          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+        });
+      })(jQuery);
+      var current = document.body.getAttribute('data-page') || '';
+      document.querySelectorAll('.pgx-menu > li').forEach(function (li) {
+        li.classList.toggle('active', li.getAttribute('data-page') === current);
+      });
+    });
+
+    // Load footer
+    fetch('footer.html').then(r => r.text()).then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+
+    // -------- FAQs interactions --------
+    (function () {
+      // Accordion toggle
+      document.querySelectorAll('.faq-q').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var card = btn.parentElement;
+          var ans = card.querySelector('.faq-a');
+          var open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', !open);
+          ans.style.display = open ? 'none' : 'block';
+          btn.querySelector('.faq-toggle').textContent = open ? '+' : '×';
+        });
+      });
+
+      // Category filter
+      var tabs = document.querySelectorAll('.faqs-tabs li');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('is-active'); });
+          tab.classList.add('is-active');
+          var cat = tab.getAttribute('data-cat');
+          document.querySelectorAll('.faq-card').forEach(function (c) {
+            if (cat === 'all') { c.style.display = ''; return; }
+            var cats = (c.getAttribute('data-cat') || '').split(/\s+/);
+            c.style.display = cats.indexOf(cat) > -1 ? '' : 'none';
+          });
+        });
+      });
+
+      // Search filter (client-side)
+      var input = document.getElementById('faqSearch');
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase();
+        document.querySelectorAll('.faq-card').forEach(function (c) {
+          var txt = c.textContent.toLowerCase();
+          c.style.display = txt.indexOf(q) > -1 ? '' : 'none';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
