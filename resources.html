@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plutogenix | Resources</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="resources.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="resources">
+  <!-- Navbar (optional: will load if navbar.html exists) -->
+  <div id="navbar-container"></div>
+
+  <!-- Section 1 -->
+  <section class="resources-section">
+    <div class="wrap">
+      <h1 class="resources-title">Veterinary Doctor Resources</h1>
+      <div class="card-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Top 5 Warning Signs Your Pet Might Need a Health Check</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Routine Health Tests Every Pet Should Get Annually</h2>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Is Your Pet Acting Strange? When to See a Vet vs Book a Diagnostic Test?</h2>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decorative image -->
+  <!-- <div class="decorative-image-wrapper" aria-hidden="true">
+    <img src="assets/resourcedna.png" alt="" class="decorative-image" />
+  </div> -->
+
+  <!-- Section 2 -->
+  <section class="resources-section alt">
+    <div class="wrap">
+      <h1 class="resources-title">Nutrition And Fitness</h1>
+      <div class="card-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Top 5 Warning Signs Your Pet Might Need a Health Check</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Routine Health Tests Every Pet Should Get Annually</h2>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Is Your Pet Acting Strange? When to See a Vet vs Book a Diagnostic Test?</h2>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decorative image -->
+  <!-- <div class="decorative-image-wrapper mid" aria-hidden="true">
+    <img src="assets/resourcedna.png" alt="" class="decorative-image" />
+  </div> -->
+
+  <!-- Section 3 -->
+  <section class="resources-section">
+    <div class="wrap">
+      <h1 class="resources-title">Diagnostics And Well-Being</h1>
+
+      <div class="card-grid">
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Why Diagnostic Testing is Important for Pets, as it is for Humans?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Home Sample Collection for Pets: What to Expect and How to Prepare</h2>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Urine, Stool, or Blood? Choosing the Right Test for Your Pet’s Symptoms</h2>
+          </div>
+        </article>
+      </div>
+
+      <!-- Overlap row -->
+      <div class="decorative-image-wrapper overlap" aria-hidden="true">
+        <img src="assets/resourcedna.png" alt="" class="decorative-image" />
+      </div>
+
+      <div class="card-grid squeezed">
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Why Diagnostic Testing is Important for Pets, as it is for Humans?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Home Sample Collection for Pets: What to Expect and How to Prepare</h2>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-content">
+            <h2>Urine, Stool, or Blood? Choosing the Right Test for Your Pet’s Symptoms</h2>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (optional: will load if footer.html exists) -->
+  <div id="footer-container"></div>
+
+  <!-- Optional loaders for navbar/footer -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    // fetch('navbar.html').then(r=>r.text()).then(html=>{ const n=document.getElementById('navbar-container'); if(n) n.innerHTML=html; });
+    // fetch('footer.html').then(r=>r.text()).then(html=>{ const f=document.getElementById('footer-container'); if(f) f.innerHTML=html; });
+        // Load navbar and mark active
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+      (function ($) {
+        $('#pgx-nav a').on('click', function () {
+          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+        });
+      })(jQuery);
+      var current = document.body.getAttribute('data-page') || '';
+      document.querySelectorAll('.pgx-menu > li').forEach(function (li) {
+        li.classList.toggle('active', li.getAttribute('data-page') === current);
+      });
+    });
+
+    // Load footer
+    fetch('footer.html').then(r => r.text()).then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

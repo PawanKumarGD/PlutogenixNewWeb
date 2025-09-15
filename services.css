@@ -114,7 +114,6 @@
   flex-direction: column;
   align-items: center;
   gap: 45px;
-  margin-bottom: 10%;
 }
 
 .specialised-tests-main-title {
@@ -173,4 +172,143 @@
   font-weight: 600;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Why Accuracy Matters Section */
+.accuracy-matters-section-main {
+  height: 780px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  background-size: cover;
+  background-image: url(assets/whyAccuracyMatters.png);
+}
+
+.accuracy-matters-section-title {
+  color: white;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: capitalize;
+  word-wrap: normal;
+  width: 470px;
+  padding: 0px 200px;
+  padding-top: 190px;
+  margin: 0;
+}
+
+.accuracy-matters-section-description {
+  color: white;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  word-wrap: normal;
+  width: 50%;
+  padding: 20px 200px;
+  margin: 0;
+}
+
+.accuracy-matters-section-button {
+  color: #fff;
+  background: #f15a22;
+  border: 1px solid #f15a22;
+  width: 177px;
+  height: 53;
+  opacity: 1;
+  border-radius: 8px;
+  padding-top: 16px;
+  padding-right: 38px;
+  padding-bottom: 16px;
+  padding-left: 38px;
+  margin: 0px 200px;
+}
+
+/* Turnaround promise section */
+.turnaround-promise-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url(assets/servicePageBackgroundVector.png);
+  background-repeat: no-repeat;
+  background-size: 620px;
+  background-position: 220px 15px;
+}
+.turnaround-promise-main-1 {
+  width: 50%;
+}
+.turnaround-promise-main-2 {
+  width: 50%;
+}
+
+.turnaround-promise-main-2-title {
+  width: 300px;
+  word-wrap: normal;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: capitalize;
+  color: #f15922;
+  margin: 0;
+  margin-top: 60px;
+}
+.turnaround-promise-main-2-description {
+  width: 380px;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.turnaround-promise-main-2-button {
+  width: 168;
+  height: 53;
+  border-radius: 8px;
+  padding-top: 16px;
+  padding-right: 38px;
+  padding-bottom: 16px;
+  padding-left: 38px;
+  gap: 10px;
+  background: #f6b637;
+  border: 1px solid #f6b637;
+}
+
+/* Explore Test Menu section */
+.explore-test-menu-main {
+  background-image: url(assets/ExploreTestMenuBackground.png);
+  background-size: cover;
+  height: 370px;
+  margin: 40px 0px;
+  margin-bottom: 10%;
+}
+
+.explore-test-menu-title {
+  color: #fff;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: capitalize;
+  margin: 0;
+  padding-left: 200px;
+  padding-top: 120px;
+}
+
+.explore-test-menu-button {
+  width: 174;
+  height: 53;
+  border-radius: 8px;
+  padding-top: 16px;
+  padding-right: 38px;
+  padding-bottom: 16px;
+  padding-left: 38px;
+  gap: 10px;
+  margin-left: 200px;
+  margin-top: 35px;
+  background: #f6b637;
 }

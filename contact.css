@@ -7,7 +7,7 @@
 }
 
 .contact-title{
-  font-weight: 800;
+  font-weight: 600;
   color: #e85d0f;
   font-size: clamp(1.8rem, 4.6vw, 2.8rem);
   margin: 0 0 .4rem;
@@ -20,11 +20,11 @@
 
 /* form */
 .contact-form label{
-  display:block; font-weight:700; color:#4a321f; margin: .4rem 0 .35rem;
+  display:block; font-weight:700; color:#4A2016; margin: .4rem 0 .35rem;
 }
 .input-soft{
   background:#fff;
-  border: .12rem solid #ffd9b5;
+  border: .12rem solid #F58220;
   border-radius: .6rem;
   padding: .8rem 1rem;
   box-shadow: inset 0 .1rem .4rem rgba(0,0,0,.05);
@@ -51,11 +51,11 @@
 
 /* decorative blobs */
 .contact-blob{
-  position:absolute; width: clamp(5rem, 17vw, 11rem); height:auto;
+  position:absolute; width: clamp(5rem, 28vw, 30rem); height:auto;
   pointer-events:none; opacity:.95; z-index:0;
 }
-.contact-blob--left  { left: -1%; bottom: 18%; }
-.contact-blob--right { right:-1%; top: 16%; }
+.contact-blob--left  { left: 10%; bottom: -7%; }
+.contact-blob--right { right:10%; top: 18%; }
 .contact-page .container{ position:relative; z-index:1; }
 
 
