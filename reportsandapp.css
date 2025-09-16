@@ -9,18 +9,19 @@
 
 .ra-title{
   color:#e85d0f;
-  font-weight:800;
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight:700;
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
   line-height:1.1;
   margin: 0 0 .6rem;
 }
 
 .ra-lead{
   color:#5a4331;
-  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  font-size: clamp(0.8rem, 2.2vw, 0.6rem);
   line-height:1.65;
   margin: 0 0 1.25rem;
   max-width: 34rem;
+  font-weight: 500;
 }
 
 .ra-store-label{
@@ -32,13 +33,13 @@
 
 .ra-store-cta{ display:flex; gap:.8rem; flex-wrap:wrap; }
 .btn-store{
-  background:#f3a13a; color:#3b170f !important;
+  background:#F6B637; color:#3b170f !important;
   font-weight:700; padding:.7rem 1.1rem;
   border-radius:.6rem; border:none;
   box-shadow: 0 .2rem .8rem rgba(0,0,0,.12);
 }
-.btn-store:hover{ background:#ffb24f; color:#3b170f !important; }
-.btn-store.alt{ background:#e6c06d; }
+.btn-store:hover{ background:#F6B637; color:#3b170f !important; }
+.btn-store.alt{ background:#F6B637; }
 .btn-store.alt:hover{ background:#f0cf82; }
 
 /* Phone image (single file) */
@@ -95,17 +96,21 @@
 
 /* ===== Reports & App – Section 2 (CTA) ===== */
 .ra-cta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
   color:#fff;
-  padding: clamp(2.2rem, 6vw, 3.2rem) 0;
+  padding-top: clamp(2.2rem, 6vw, 3.2rem);
   background: linear-gradient(90deg, #f6a136 0%, #f49d29 35%, #fb8f3e 100%);
+  margin-bottom: 8rem;
 }
 
 .ra-cta-title{
-  font-weight:800;
+  font-weight:600;
   line-height:1.05;
-  font-size: clamp(1.8rem, 5.3vw, 3rem);
+  font-size: clamp(3.8rem, 5.3vw, 3rem);
   margin: 0 0 .6rem;
   text-shadow: 0 2px 10px rgba(0,0,0,.12);
 }
@@ -122,17 +127,31 @@
   background:#e45922;
   color:#fff !important;
   font-weight:700;
-  padding:.75rem 1.4rem;
+  padding:1rem 2.4rem;
+  width: 10rem;
   border-radius:.6rem;
   border:none;
   box-shadow: 0 .25rem .9rem rgba(0,0,0,.18);
 }
 .ra-cta-btn:hover{ background:#ff6b2f; color:#fff !important; }
 
-/* image */
-.ra-cta-imgwrap{
-  text-align:right;
+.ra-cta-text{
+  font-size: 0.8rem;
+  font-weight: 400;
 }
+
+.rta-cta-text{
+  text-align: left;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;  
+  margin-top: 6rem;
+}
+/* image */
+/* .ra-cta-imgwrap{
+  text-align:right;
+} */
 .ra-cta-img{
   width: 100%;
   max-width: clamp(18rem, 23vw, 30rem);

@@ -70,7 +70,8 @@
     font-weight: 600;
     font-size: 10px;
 }
-/* everyday css */
+
+
 .tests-section {
   text-align: center;
   padding: 50px 80px;
@@ -141,11 +142,60 @@
   transition: background 0.3s ease;
 }
 
-/* Responsive */
-@media (max-width: 1000px) {
+
+@media (max-width: 1024px) {
   .tests-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .order-container{
+    height: 300px;
+  }
+  .order-inner2{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* margin-left: 150px;
+  margin-top: 40px; */
+}
+.order-inner{
+      width: 80%;
+      margin-top: 60px;
+      margin-left: 332px;
+    }
+.book{
+    font-size: 50px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    gap: 10px;
+}
+.fast{
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.report{
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+ }
+ .downloadbutt{
+    font-weight: 400;
+    padding: clamp(0.2rem, 1vw, 1.5rem);
+}
+.download{
+    text-decoration: none;
+    color: black;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+}
 }
 
 @media (max-width: 600px) {
