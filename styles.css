@@ -1544,9 +1544,14 @@ body {
     margin-top: .6rem;
   }
 
-  /* .email {
+  .email {
     display: flex;
-  } */
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    text-wrap: wrap;
+  }
+
+
 
   .contact-card {
     transform: translateY(-35%);
