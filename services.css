@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-/* * {
-  font-family: "Inter", sans-serif;
-} */
+/* @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .hero-section-service {
   color: white;
   width: 100%;
@@ -41,7 +39,6 @@
   font-size: 13px;
 }
 
-/* Routine tests section */
 .routine-tests-main {
   display: flex;
   flex-direction: column;
@@ -107,7 +104,6 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* specialised tests section */
 
 .specialised-tests-main {
   display: flex;
@@ -174,7 +170,7 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Why Accuracy Matters Section */
+
 .accuracy-matters-section-main {
   height: 780px;
   display: flex;
@@ -226,7 +222,7 @@
   margin: 0px 200px;
 }
 
-/* Turnaround promise section */
+
 .turnaround-promise-main {
   display: flex;
   align-items: center;
@@ -277,7 +273,7 @@
   border: 1px solid #f6b637;
 }
 
-/* Explore Test Menu section */
+
 .explore-test-menu-main {
   background-image: url(assets/ExploreTestMenuBackground.png);
   background-size: cover;
@@ -311,4 +307,471 @@
   margin-left: 200px;
   margin-top: 35px;
   background: #f6b637;
+} */
+
+/* ========= Tokens ========= */
+:root{
+  --wrap: min(92vw, 76rem);
+  --gap: clamp(.8rem, 2.2vw, 1.6rem);
+  --radius: .9rem;
+  --shadow: 0 .2rem 1rem rgba(0,0,0,.12);
+
+  --fs-12: clamp(.75rem, 1.3vw, .9rem);
+  --fs-14: clamp(.85rem, 1.5vw, 1rem);
+  --fs-16: clamp(.95rem, 1.7vw, 1.125rem);
+  --fs-32: clamp(1.4rem, 3vw, 2rem);
+  --fs-44: clamp(1.8rem, 4vw, 2.75rem);
+  --fs-56: clamp(2.2rem, 5.2vw, 3.5rem);
+
+  --brand: #F15922;
+  --amber: #F6B637;
+  --ink: #2a2a2a;
+}
+
+/* ========= HERO ========= */
+.hero-section-service{
+  color:#fff;
+  width:100%;
+  min-height: clamp(26rem, 70vh, 42rem);
+  background-image:url(assets/servicesHeroBanner.png);
+  background-size:cover;
+  background-position:center;
+  display:grid;
+  grid-template-rows:auto auto auto;
+  align-content:center;
+  gap: clamp(.8rem, 2vw, 1.2rem);
+  padding: clamp(2rem, 8vh, 6rem) clamp(6vw, 14vw, 12vw);
+}
+.hero-section-service-1{
+  margin:0;
+  font-size: var(--fs-56);
+  font-weight:800;
+  line-height:1.05;
+}
+.hero-section-service-2{
+  margin:0;
+  font-size: var(--fs-14);
+  font-weight:300;
+  opacity:.95;
+}
+.hero-section-service-3,
+.hero-section-service-3:hover{
+  cursor:pointer;
+  background:#F6B637;
+  border:0;
+  border-radius:.6rem;
+  padding: clamp(.8rem, 1.8vw, 1rem) clamp(1.2rem, 3vw, 1.8rem);
+  font-size: var(--fs-12);
+  color:#3b170f;
+  width: fit-content;
+}
+
+/* ========= ROUTINE TESTS ========= */
+.routine-tests-main{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: clamp(1.8rem, 5vh, 3rem);
+  padding-block: clamp(3rem, 9vh, 5rem);
+}
+.routine-tests-main-title{
+  margin:0;
+  font-weight:800;
+  font-size: var(--fs-44);
+  text-transform:capitalize;
+  color:var(--brand);
+
+  text-align:center;
+}
+.routine-tests-main-service-box{
+  width: var(--wrap);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 3vw, 2.2rem);
+  place-items:center;
+  
+}
+.routine-tests-main-inner-service-box{
+  position:relative;
+  width:100%;
+  aspect-ratio: 5/4; /* replaces fixed width/height */
+  border-radius: .9rem;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform .35s ease;
+}
+.routine-tests-main-inner-service-box img{
+  width:100%; height:100%; object-fit:cover;
+}
+.routine-tests-main-inner-service-box-text-black {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 2  0px;
+  font-weight: 700;
+  color: #000;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.routine-tests-main-inner-service-box-text-white {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ========= Pagination DOTS ========= */
+.tests-pager {
+  display:flex;
+  justify-content:center;
+  gap:.6rem;
+  margin-top: clamp(.6rem, 2vh, 1rem);
+}
+.tests-pager button {
+  width:.55rem; height:.55rem; border-radius:50%;
+  border:0; background:#cfcfcf; cursor:pointer;
+}
+.tests-pager button[aria-current="page"] { background:#1abc60; }
+.tests-pager button:focus-visible {
+  outline:.18rem solid #6aa8ff; outline-offset:.1rem;
+}
+
+
+
+
+
+/* ========= SPECIALISED TESTS ========= */
+.specialised-tests-main{
+  display:flex; flex-direction:column; align-items:center;
+  gap: clamp(1.8rem, 5vh, 3rem);
+  padding-block: clamp(3rem, 9vh, 5rem);
+}
+.specialised-tests-main-title{
+  margin:0; font-weight:800; font-size: var(--fs-44);
+  text-transform:capitalize; color:var(--brand); text-align:center;
+}
+.specialised-tests-main-service-box{
+  width: var(--wrap);
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  place-items:center;
+}
+.specialised-tests-main-inner-service-box{
+  position:relative;
+  width:100%;
+  aspect-ratio: 1/1;         /* closer to your 280×258 but fluid */
+  border-radius:.9rem; overflow:hidden; box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform .35s ease;
+}
+.specialised-tests-main-inner-service-box img{width:100%; height:100%; object-fit:cover}
+.specialised-tests-main-inner-service-box-text-black,
+.specialised-tests-main-inner-service-box-text-white{
+  position:absolute; inset:auto 0 0 0;
+  padding:.8rem 1rem; text-align:center;
+  font-size: var(--fs-16); font-weight:800;
+  background: linear-gradient(0deg, rgba(0,0,0,.55), rgba(0,0,0,0));
+  color:#fff;
+}
+.specialised-tests-main-inner-service-box-text-black{
+  color:#111; background: linear-gradient(0deg, rgba(255,255,255,.9), rgba(255,255,255,0));
+}
+
+/* ========= WHY ACCURACY ========= */
+.accuracy-matters-section-main{
+  min-height: clamp(28rem, 80vh, 48rem);
+  display:flex; flex-direction:column;
+  justify-content:center;
+  background-image:url(assets/whyAccuracyMatters.png);
+  background-size:cover; background-position:center;
+  gap: clamp(1rem, 2.6vw, 1.6rem);
+  padding: clamp(2rem, 6vw, 3rem) clamp(6vw, 14vw, 12vw);
+}
+.accuracy-matters-section-title{
+  color:#fff; margin:0;
+  font-weight:800; font-size: var(--fs-56); line-height:1.05;
+  width:min(52ch, 60%);
+}
+.accuracy-matters-section-description{
+  color:#fff; margin:0; font-size: var(--fs-14); line-height:1.6;
+  width:min(70ch, 70%);
+}
+.accuracy-matters-section-button {
+  color: #fff;
+  background: #f15a22;
+  border: 1px solid #f15a22;
+  width: 177px;
+  height: 53;
+  opacity: 1;
+  border-radius: 8px;
+  padding-top: 16px;
+  padding-right: 38px;
+  padding-bottom: 16px;
+  padding-left: 38px;
+}
+/* ========= TURNAROUND PROMISE ========= */
+.turnaround-promise-main{
+  display:grid; grid-template-columns: 1fr 1fr; align-items:center;
+  gap: var(--gap);
+  background-image:url(assets/servicePageBackgroundVector.png);
+  background-repeat:no-repeat;
+  background-size: clamp(20rem, 46vw, 38rem);
+  background-position: left clamp(1rem, 6vw, 3rem) top clamp(.4rem, 2vw, 1rem);
+  padding: clamp(2.4rem, 7vh, 4rem) clamp(6vw, 14vw, 12vw);
+}
+.turnaround-promise-main-1,
+.turnaround-promise-main-2{ width:100% }
+.turnaround-promise-main-1 img{ width:100%; height:auto; display:block }
+
+.turnaround-promise-main-2-title{
+  margin:0 0 .6rem; color:var(--brand);
+  font-weight:800; font-size: var(--fs-56); line-height:1.05;
+}
+.turnaround-promise-main-2-description{
+  margin:0 0 1rem; font-weight:300; font-size: var(--fs-14); line-height:1.6; max-width: 50ch;
+}
+.turnaround-promise-main-2-button{
+  border-radius:.6rem; border:1px solid var(--amber);
+  background:var(--amber); color:#3b170f;
+  padding: clamp(.9rem, 2vw, 1rem) clamp(1.4rem, 3.2vw, 2.2rem);
+}
+
+/* ========= EXPLORE TEST MENU ========= */
+/* Background section */
+.explore-test-menu-main {
+  background: url("assets/ExploreTestMenuBackground.png") no-repeat center/cover;
+  min-height: clamp(14rem, 50vh, 24rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 clamp(1rem, 8vw, 12rem);
+  margin-block: clamp(1rem, 4vh, 3rem);
+  color: #fff;
+  position: relative;
+}
+
+/* Content wrapper */
+.explore-test-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8rem, 2vh, 1.2rem);
+  z-index: 2;
+}
+
+/* Title */
+.explore-test-menu-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Button */
+.explore-test-menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6b637;
+  color: #3b170f;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding: clamp(0.6rem, 1.5vh, 0.9rem) clamp(1.2rem, 4vw, 2.4rem);
+  box-shadow: 0 0.15rem 0.6rem rgba(0,0,0,0.15);
+  transition: background 0.3s ease;
+  width: 15.875rem;
+}
+.explore-test-menu-button:hover {
+  background: #f4a622;
+}
+
+/* Responsiveness */
+@media (max-width: 48rem) {  /* Tablets and below */
+  .explore-test-menu-main {
+    justify-content: center;
+    text-align: center;
+    padding: clamp(2rem, 6vh, 4rem) 5vw;
+  }
+
+  .explore-test-menu-content {
+    align-items: center;
+  }
+}
+
+@media (max-width: 30rem) {  /* Small phones */
+  .explore-test-menu-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+  .explore-test-menu-button {
+    width: 100%;
+    max-width: 15rem;
+  }
+}
+
+/* ========= RESPONSIVE BREAKPOINTS ========= */
+
+/* ≤1024px */
+@media (max-width: 64rem){
+  .hero-section-service{
+    padding: clamp(2rem, 7vh, 4rem) 8vw;
+  }
+  .routine-tests-main-service-box{ grid-template-columns: repeat(2, 1fr) }
+  .specialised-tests-main-service-box{ grid-template-columns: repeat(2, 1fr) }
+  .turnaround-promise-main{ grid-template-columns: 1fr; text-align:center }
+  .accuracy-matters-section-title{ width:100% }
+  .accuracy-matters-section-description{ width:100% }
+  .accuracy-matters-section-button{margin-left: revert-layer}
+  .explore-test-menu-main{ align-items:flex-start }
+}
+
+/* =========================================
+   MOBILE LAYOUT — like your screenshot
+   ========================================= */
+
+/* ≤600px — phones */
+@media (max-width: 37.5rem){
+
+  /* HERO */
+  .hero-section-service{
+    min-height: clamp(20rem, 68vh, 28rem);
+    padding: clamp(2rem, 9vh, 5rem) 6vw 8vh;
+    background-position: right center;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: clamp(.6rem, 2.6vw, 1rem);
+    text-align: left;
+  }
+  .hero-section-service-1{
+    font-size: clamp(1.6rem, 9vw, 2.2rem);
+    line-height: 1.08;
+  }
+  .hero-section-service-2{
+    font-size: clamp(.78rem, 3.2vw, .95rem);
+    max-width: 32ch;
+    opacity:.95;
+  }
+  .hero-section-service-3{
+    padding: clamp(.55rem, 2.8vw, .7rem) clamp(.9rem, 4vw, 1.2rem);
+    font-size: clamp(.72rem, 3vw, .85rem);
+  }
+
+  /* TITLES */
+  .routine-tests-main-title,
+  .specialised-tests-main-title{
+    font-size: clamp(1.25rem, 7.5vw, 1.8rem);
+    margin-top: 0;
+  }
+
+  /* GRIDS -> SINGLE COLUMN */
+  .routine-tests-main-service-box,
+  .specialised-tests-main-service-box{
+    width: 94vw;
+    margin-inline:auto;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: clamp(.8rem, 3.6vw, 1.2rem);
+    place-items: center;
+  }
+
+  /* CARDS */
+  .routine-tests-main-inner-service-box,
+  .specialised-tests-main-inner-service-box{
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    border-radius: .8rem;
+    box-shadow: 0 .12rem .6rem rgba(0,0,0,.12);
+  }
+  .routine-tests-main-inner-service-box-text-black,
+  .routine-tests-main-inner-service-box-text-white,
+  .specialised-tests-main-inner-service-box-text-black,
+  .specialised-tests-main-inner-service-box-text-white{
+    padding: .7rem 1rem;
+    font-size: clamp(.85rem, 3.2vw, 1rem);
+  }
+
+  /* WHY ACCURACY */
+  .accuracy-matters-section-main{
+    min-height: clamp(20rem, 64vh, 30rem);
+    padding: 12vw 6vw;
+    background-position: right center;
+    gap: clamp(.7rem, 2.4vw, 1rem);
+    text-align: left;
+  }
+  .accuracy-matters-section-title{
+    width: 100%;
+    font-size: clamp(1.4rem, 8vw, 2rem);
+    line-height: 1.08;
+  }
+  .accuracy-matters-section-description{
+    width: 100%;
+    font-size: clamp(.8rem, 3.2vw, .95rem);
+    line-height: 1.55;
+  }
+  .accuracy-matters-section-button{
+    padding: .65rem 1.1rem;
+    font-size: clamp(.78rem, 3.2vw, .9rem);
+    margin-left: revert-layer;
+  }
+
+  /* TURNAROUND PROMISE */
+  .turnaround-promise-main{
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 3.6vw, 1.4rem);
+    padding: 10vw 6vw;
+    text-align: left;
+    background-size: 60vw;
+    background-position: left -10vw top 2vw;
+  }
+  .turnaround-promise-main-2-title{
+    font-size: clamp(1.4rem, 8vw, 2rem);
+    line-height: 1.08;
+    margin: 0 0 .4rem;
+  }
+  .turnaround-promise-main-2-description{
+    font-size: clamp(.82rem, 3.2vw, .98rem);
+  }
+  .turnaround-promise-main-2-button{
+    padding: .65rem 1.1rem;
+    font-size: clamp(.78rem, 3.2vw, .9rem);
+  }
+
+  /* EXPLORE TEST MENU */
+  .explore-test-menu-main{
+    min-height: clamp(12rem, 48vh, 18rem);
+    padding-left: 6vw;
+    align-items: flex-start;
+    margin-block: clamp(1.2rem, 5vh, 2rem);
+  }
+  .explore-test-menu-title{
+    font-size: clamp(1.6rem, 9vw, 2.2rem);
+    line-height: 1.08;
+  }
+  .explore-test-menu-button{
+    padding: .6rem 1rem;
+    font-size: clamp(.78rem, 3vw, .9rem);
+    margin-top: .7rem;
+  }
+}
+
+/* ≤360px — very small phones (tighten further) */
+@media (max-width: 22.5rem){
+  .hero-section-service{ padding: 10vh 5vw 7vh }
+  .hero-section-service-1{ font-size: clamp(1.35rem, 10vw, 1.8rem) }
+  .routine-tests-main-service-box,
+  .specialised-tests-main-service-box{ width: 96vw }
+  .accuracy-matters-section-button,
+  .turnaround-promise-main-2-button,
+  .explore-test-menu-button{ padding: .55rem .9rem }
 }

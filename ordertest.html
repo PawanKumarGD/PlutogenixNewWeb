@@ -29,97 +29,46 @@
         </div>
       </div>
     </div>
-    <!-- everyday test card section -->
-    <section class="tests-section">
-      <h2 class="tests-title">Everyday Tests</h2>
-      <p class="tests-subtitle">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </p>
-
-      <div class="tests-grid">
-        <div class="test-card">
-          <img src="assets/microbiology.png" alt="Microbiology" />
-          <div class="overlay1">Microbiology</div>
-        </div>
-
-        <div class="test-card">
-          <img src="assets/toxicology.jpg" alt="Toxicology" />
-          <div class="overlay2">Toxicology</div>
-        </div>
-
-        <div class="test-card">
-          <img src="assets/histopathology.jpg" alt="Histopathology" />
-          <div class="overlay1">Histopathology</div>
-        </div>
-
-        <div class="test-card">
-          <img src="assets/urinalysis.jpg" alt="Urinalysis" />
-          <div class="overlay2">Urinalysis</div>
-        </div>
-      </div>
-
-       <div class="dots">••••</div>
-    </section>
-<!-- Most Ordered Tests -->
-<section class="tests-section">
-  <h2 class="tests-title">Most Ordered <span>Tests</span></h2>
+   <!-- Everyday Tests -->
+<section class="tests-section" id="everyday-tests">
+  <h2 class="tests-title">Everyday Tests</h2>
   <p class="tests-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
   <div class="tests-grid">
-    <div class="test-card">
-      <img src="assets/urine.jpg" alt="Urine Tests">
-      <div class="overlay1">Urine Tests</div>
-    </div>
-
-    <div class="test-card">
-      <img src="assets/skin.jpg" alt="Skin Scrapings">
-      <div class="overlay2">Skin Scrapings</div>
-    </div>
-
-    <div class="test-card">
-      <img src="assets/blood.jpg" alt="Blood Tests">
-      <div class="overlay1">Blood Tests</div>
-    </div>
-
-    <div class="test-card">
-      <img src="assets/faecal.jpg" alt="Faecal Tests">
-      <div class="overlay2">Faecal Tests</div>
-    </div>
+    <div class="test-card"><img src="assets/microbiology.png" alt="Microbiology"><div class="overlay1">Microbiology</div></div>
+    <div class="test-card"><img src="assets/toxicology.jpg" alt="Toxicology"><div class="overlay2">Toxicology</div></div>
+    <div class="test-card"><img src="assets/histopathology.jpg" alt="Histopathology"><div class="overlay1">Histopathology</div></div>
+    <div class="test-card"><img src="assets/urinalysis.jpg" alt="Urinalysis"><div class="overlay2">Urinalysis</div></div>
   </div>
-
-  <div class="dots">••••</div>
+  <div class="tests-pager" id="pager-everyday"></div>
 </section>
 
-
-<!-- Health Conditions -->
-<section class="tests-section">
-  <h2 class="tests-title">Health <span>Conditions</span></h2>
+<!-- Most Ordered Tests -->
+<section class="tests-section" id="ordered-tests">
+  <h2 class="tests-title">Most Ordered Tests</h2>
   <p class="tests-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
   <div class="tests-grid">
-    <div class="test-card">
-      <img src="assets/infections.jpg" alt="Infections">
-      <div class="overlay1">Infections</div>
-    </div>
-
-    <div class="test-card">
-      <img src="assets/obesity.jpg" alt="Obesity">
-      <div class="overlay2">Obesity</div>
-    </div>
-
-    <div class="test-card">
-      <img src="assets/allergies.jpg" alt="Allergies">
-      <div class="overlay1">Allergies</div>
-    </div>
-
-    <div class="test-card">
-      <img src="assets/diabetes.jpg" alt="Diabetes">
-      <div class="overlay2">Diabetes</div>
-    </div>
+    <div class="test-card"><img src="assets/urine.jpg" alt="Urine Tests"><div class="overlay1">Urine Tests</div></div>
+    <div class="test-card"><img src="assets/skin.jpg" alt="Skin Scrapings"><div class="overlay2">Skin Scrapings</div></div>
+    <div class="test-card"><img src="assets/blood.jpg" alt="Blood Tests"><div class="overlay1">Blood Tests</div></div>
+    <div class="test-card"><img src="assets/faecal.jpg" alt="Faecal Tests"><div class="overlay2">Faecal Tests</div></div>
   </div>
+  <div class="tests-pager" id="pager-ordered"></div>
+</section>
 
-  <div class="dots">••••</div>
+<!-- Health Conditions -->
+<section class="tests-section" id="health-conditions">
+  <h2 class="tests-title">Health Conditions</h2>
+  <p class="tests-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+  <div class="tests-grid">
+    <div class="test-card"><img src="assets/infections.jpg" alt="Infections"><div class="overlay1">Infections</div></div>
+    <div class="test-card"><img src="assets/obesity.jpg" alt="Obesity"><div class="overlay2">Obesity</div></div>
+    <div class="test-card"><img src="assets/allergies.jpg" alt="Allergies"><div class="overlay1">Allergies</div></div>
+    <div class="test-card"><img src="assets/diabetes.jpg" alt="Diabetes"><div class="overlay2">Diabetes</div></div>
+  </div>
+  <div class="tests-pager" id="pager-health"></div>
 </section>
 
   <!-- Footer -->
@@ -190,5 +139,52 @@
       });
     })();
   </script>
+
+  <!-- pagination script -->
+   <script>
+(function(){
+  const mql = window.matchMedia('(max-width: 480  px)'); // 768px
+
+  function makePager(sectionId, pagerId){
+    const section = document.getElementById(sectionId);
+    if(!section) return;
+
+    const items = Array.from(section.querySelectorAll('.test-card'));
+    const pager = document.getElementById(pagerId);
+    if(!pager) return;
+
+    let page = 1, total = items.length;
+
+    function render(){
+      const mobile = mql.matches;
+      if(!mobile){
+        items.forEach(el => el.style.display = '');
+        pager.style.display = 'none';
+        return;
+      }
+
+      pager.style.display = '';
+      items.forEach(el => el.style.display = 'none');
+      items[page-1].style.display = '';
+
+      pager.innerHTML = '';
+      for(let i=1;i<=total;i++){
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label',`Go to card ${i}`);
+        if(i===page) dot.setAttribute('aria-current','page');
+        dot.addEventListener('click',()=>{page=i;render();});
+        pager.appendChild(dot);
+      }
+    }
+
+    render();
+    mql.addEventListener('change',render);
+  }
+
+  makePager('everyday-tests','pager-everyday');
+  makePager('ordered-tests','pager-ordered');
+  makePager('health-conditions','pager-health');
+})();
+</script>
 </body>
 </html>

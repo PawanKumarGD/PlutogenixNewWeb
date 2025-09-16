@@ -412,7 +412,7 @@ body {
 .range-decor--right {
   right: 2vw;
   bottom: 6%;
-  transform: scaleX(-1);
+  /* transform: scaleX(-1); */
 }
 
 /* Keep text above blobs */
@@ -1397,6 +1397,35 @@ body {
   z-index: 1;
 }
 
+@media (max-width: 426px) {
+    .img-responsive {
+    display: none;
+  }
+
+  .hero-section {
+    background-image: url(assets/homepagemob.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 13vw, 8rem);
+    margin-top:-50%;
+}
+.hero-sub {
+    font-size: clamp(0.5rem, 4vw, 1.2rem);
+    margin: 1rem 0 1.5rem;
+}
+.app-mocks{
+  order:1;
+  margin-bottom : 20%;
+}
+.app-copy{
+  order: 2;
+  margin-bottom : 20%;
+}
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 767px) {
@@ -1613,3 +1642,5 @@ body {
     top: 26%;
   }
 }
+
+

@@ -149,6 +149,22 @@
   transition: background 0.3s ease;
 }
 
+.tests-pager {
+  display:flex;
+  justify-content:center;
+  gap:.6rem;
+  margin-top: clamp(.6rem, 2vh, 1rem);
+}
+.tests-pager button {
+  width:.55rem; height:.55rem; border-radius:50%;
+  border:0; background:#cfcfcf; cursor:pointer;
+}
+.tests-pager button[aria-current="page"] { background:#f15922; }
+.tests-pager button:focus-visible {
+  outline:.18rem solid #6aa8ff; outline-offset:.1rem;
+}
+
+
 /* ============== RESPONSIVE ============== */
 
 /* ≤1200px: 3 cards */
