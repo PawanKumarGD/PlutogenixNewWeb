@@ -86,11 +86,11 @@
 
 /* Decorative blobs */
 .ra-blob{
-  position:absolute; width: clamp(6rem, 16vw, 12rem); height:auto;
+  position:absolute; width: clamp(6rem, 34vw, 35rem); height:auto;
   pointer-events:none; opacity:.95; z-index:0;
 }
-.ra-blob--left  { left: 2%; bottom: 6%; }
-.ra-blob--right { right:4%; top: 14%; }
+.ra-blob--left  { left: 22vw; bottom: 3%; }
+.ra-blob--right { right:26vw; top: 14%; }
 .ra-hero .container{ position:relative; z-index:1; }
 
 /* ===== Reports & App – Section 2 (CTA) ===== */
@@ -143,14 +143,14 @@
 /* blobs */
 .ra-cta-blob{
   position:absolute;
-  width: clamp(6rem, 18vw, 13rem);
+  width: clamp(10rem, 50vw, 50rem);
   height:auto;
   opacity:.55;
   pointer-events:none;
   z-index:0;
 }
-.ra-cta-blob--left  { left: 0; bottom: -6%; }
-.ra-cta-blob--right { right: -2%; top: -10%; }
+.ra-cta-blob--left  { left: -2%; bottom: -2%;  width: clamp(10rem, 35vw, 50rem);}
+.ra-cta-blob--right { right: 5%; top: -10%; }
 
 .ra-cta .container{ position:relative; z-index:1; }
 
