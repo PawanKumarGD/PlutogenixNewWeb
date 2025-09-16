@@ -1,123 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* ---------------- Tokens ---------------- */
+:root{
+  --wrap: min(92vw, 72rem);
+  --gap: clamp(.6rem, 1.8vw, 1.2rem);
+  --radius: .6rem;
+  --shadow: 0 .12rem .8rem rgba(0,0,0,.08);
+
+  --fs-10: clamp(.65rem, 1.3vw, .8rem);
+  --fs-12: clamp(.75rem, 1.4vw, .9rem);
+  --fs-13: clamp(.8rem, 1.6vw, 1rem);
+  --fs-14: clamp(.9rem, 1.8vw, 1.05rem);
+  --fs-28: clamp(1.3rem, 2.6vw, 1.75rem);
+  --fs-48: clamp(2rem, 5.6vw, 5rem);
+}
+
+/* ============== HERO (Book a Test) ============== */
 .order-container{
-    height:360px;
-    background: linear-gradient(180deg, #D52F03 0%, #4A2015 100%);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+  /* 360px -> fluid height that grows with image */
+  min-height: clamp(18rem, 40vh, 26rem);
+  background: linear-gradient(180deg, #D52F03 0%, #4A2015 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;       /* image | text */
+  /* align-items: center; */
+  justify-content: center;
+  /* gap: var(--gap); */
+  /* padding: clamp(1rem, 3vw, 2rem) 0; */
+  overflow: hidden;
 }
 
-.order-inner{
-    width: 67%;
-    margin-top: 44px;
-    margin-left: 350px;
-}
+
+/* left: image */
 .order-inner1{
-   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex; 
+  align-items:flex-end; 
+  justify-content:flex-end;
 }
+.order-inner{
+  width: min(85%, 64rem);               /* big but safe */
+  max-width: 100%;
+  height: auto;
+  margin: 0;                         /* kill fixed offsets */
+  object-fit: contain;
+}
+
+/* right: text */
 .order-inner2{
-   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-left: 150px;
-  margin-top: 40px;
+  display:flex; flex-direction:column; justify-content:center;
+  align-items:flex-start;
+  gap: clamp(.4rem, 1.2vw, .9rem);
+  margin: 0;
+  /* padding-right: clamp(0rem, 4vw, 3rem); */
 }
 .book{
-    font-size: 50px;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    color: #FFFFFF;
-    gap: 10px;
+  font-size: var(--fs-48);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.05;
 }
-.fast{
-    font-size: 13px;
-    font-family: "Inter", sans-serif;
-    font-weight: 200;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-}
+.fast,
 .report{
-    font-size: 13px;
-    font-family: "Inter", sans-serif;
-    font-weight: 200;
-    color: #FFFFFF;
-    margin-bottom: 20px;
+  font-size: var(--fs-13);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  margin: 0;
 }
 .downloadbutt{
-    text-decoration: none;
-    color: black;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    height: 40px;
-    width: 120px;
-    background-color: #F6B637;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: clamp(2.2rem, 5.2vw, 2.8rem);
+  min-width: clamp(7rem, 14vw, 8.5rem);
+  padding-inline: clamp(.9rem, 2.6vw, 1.2rem);
+  background-color: #F6B637;
+  border-radius: .5rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; color: #000; font-weight: 700; font-family: "Inter", sans-serif;
+  box-shadow: var(--shadow);
 }
-.download{
-    text-decoration: none;
-    color: black;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 10px;
-}
-/* everyday css */
-.tests-section {
-  text-align: center;
-  padding: 50px 80px;
+.download{ color:#000; font-size: var(--fs-10); text-decoration:none; }
+
+/* ============== TESTS SECTIONS ============== */
+.tests-section{
+  text-align:center;
+  padding: clamp(2rem, 6vw, 3.2rem) 0;
   font-family: "Inter", sans-serif;
 }
-
-.tests-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
+.tests-title{
+  font-size: var(--fs-28);
+  font-weight: 800;
+  margin: 0 0 .5rem;
   color:#F15922;
 }
-
-.tests-subtitle {
-  font-size: 14px;
+.tests-subtitle{
+  font-size: var(--fs-14);
   color:#4A2016;
-  margin-bottom: 40px;
+  margin: 0 0 clamp(1rem, 4vw, 2.2rem);
 }
 
-.tests-grid {
-  display: grid;
+/* grid (desktop 4-up) */
+.tests-grid{
+  width: var(--wrap);
+  margin: 0 auto;
+  display:grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: clamp(.8rem, 2vw, 1.25rem);
 }
 
-.test-card {
+/* cards */
+.test-card{
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius);
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  box-shadow: var(--shadow);
 }
-
-.test-card img {
+.test-card img{
   width: 100%;
-  height: 220px;
+  height: clamp(9.5rem, 19vw, 13.75rem);   /* 220px -> fluid */
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform .35s ease;
 }
+.test-card:hover img{ transform: scale(1.05); }
 
-.test-card:hover img {
-  transform: scale(1.05);
-}
-
+/* label overlays */
 .overlay1 {
   position: absolute;
   left: 0;
@@ -141,15 +149,50 @@
   transition: background 0.3s ease;
 }
 
-/* Responsive */
-@media (max-width: 1000px) {
-  .tests-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* ============== RESPONSIVE ============== */
+
+/* ≤1200px: 3 cards */
+@media (max-width: 75rem){
+  .tests-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Tablet and below (<=768px) */
+@media (max-width: 48rem){
+  .order-container{
+    grid-template-columns: 1fr;         /* stack text & image */
+    text-align: center;
+    min-height: clamp(28rem, 72vh, 34rem);
+  }
+
+  .order-inner1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    order: 2;                           /* image below text */
+    margin-top: 1rem;
+  }
+
+  .order-inner{
+    width: clamp(16rem, 80vw, 42rem);   /* phone image stays big */
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .order-inner2{
+    order: 1;                           /* text on top */
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .book{
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
   }
 }
 
-@media (max-width: 600px) {
-  .tests-grid {
-    grid-template-columns: 1fr;
-  }
+
+/* ≤480px: 1 card per row; image nearly full width */
+@media (max-width: 30rem){
+  .tests-grid{ grid-template-columns: 1fr; }
+  .order-inner{ width: 100vw; }
 }
