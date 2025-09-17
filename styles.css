@@ -32,12 +32,17 @@ body {
   padding: 0.5rem 0;
 }
 
+.pgx-menu{
+  margin-left: 8%;
+  margin-top:0.5rem;
+} 
+
 .pgx-navbar .navbar-brand img {
   height: 3rem;
   max-width: 100%;
 }
 
-.pgx-menu>li>a {
+/* .pgx-menu>li>a {
   font-weight: 600;
   color: #3a3a3a !important;
   padding: 1rem;
@@ -48,9 +53,40 @@ body {
   color: #ff7a1a !important; 
   background-color: transparent !important;
   font-weight: 700;
-  /* border-bottom: 2px solid #ff7a1a; */
+} */
+
+.pgx-menu>li>a {
+  font-weight: 600;
+  color: #3a3a3a !important;
+  padding: 1rem;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
 }
 
+.pgx-menu li.active > a,
+.pgx-menu li > a:hover {
+  color: #ff7a1a !important; 
+  background-color: transparent !important;
+  font-weight: 600;
+  /*border-bottom: 2px solid #ff7a1a;*/
+}
+
+.pgx-menu li > a::after {
+   content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;                    
+  width: 0;                      
+  height: 2px;                   
+  background-color: #ff7a1a;     
+  transition: width 0.3s ease;  
+  transform: translateX(-50%);  
+}
+
+.pgx-menu li > a:hover::after {
+  width: 100%; 
+}
 
 .btn-login {
   background: #F15A22;
@@ -1652,4 +1688,17 @@ body {
   }
 }
 
+@media (max-width: 1200px) {
+  .pgx-menu{
+  margin-left: 5%;
+  margin-top:0.5rem;
+} 
+}
+
+@media (max-width: 1024px) {
+  .pgx-menu{
+  margin-left: 3%;
+  margin-top:0.5rem;
+} 
+}
 
