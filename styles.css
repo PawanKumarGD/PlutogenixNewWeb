@@ -1628,7 +1628,12 @@ body {
 
 
   .contact-card {
-    transform: translateY(-35%);
+    transform: translateY(-17%);
+}
+  
+
+  .footer-panel{
+  margin-top: -19.5vh;
   }
 
   .footer-top .col-sm-3 {
