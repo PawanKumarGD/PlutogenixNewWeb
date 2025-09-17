@@ -32,10 +32,10 @@ body {
   padding: 0.5rem 0;
 }
 
-.pgx-menu{
+.pgx-menu {
   margin-left: 8%;
-  margin-top:0.5rem;
-} 
+  margin-top: 0.5rem;
+}
 
 .pgx-navbar .navbar-brand img {
   height: 3rem;
@@ -64,28 +64,28 @@ body {
   text-decoration: none;
 }
 
-.pgx-menu li.active > a,
-.pgx-menu li > a:hover {
-  color: #ff7a1a !important; 
+.pgx-menu li.active>a,
+.pgx-menu li>a:hover {
+  color: #ff7a1a !important;
   background-color: transparent !important;
   font-weight: 600;
   /*border-bottom: 2px solid #ff7a1a;*/
 }
 
-.pgx-menu li > a::after {
-   content: '';
+.pgx-menu li>a::after {
+  content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;                    
-  width: 0;                      
-  height: 2px;                   
-  background-color: #ff7a1a;     
-  transition: width 0.3s ease;  
-  transform: translateX(-50%);  
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ff7a1a;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
 }
 
-.pgx-menu li > a:hover::after {
-  width: 100%; 
+.pgx-menu li>a:hover::after {
+  width: 100%;
 }
 
 .btn-login {
@@ -163,8 +163,8 @@ body {
   border-radius: 15px !important;
 }
 
-.app-copy{
-  margin-top : 10%;
+.app-copy {
+  margin-top: 10%;
 }
 
 .btn-cta:hover {
@@ -1443,7 +1443,7 @@ body {
 }
 
 @media (max-width: 426px) {
-    .img-responsive {
+  #hero-image {
     display: none;
   }
 
@@ -1455,20 +1455,23 @@ body {
 
   .hero-title {
     font-size: clamp(1.8rem, 13vw, 8rem);
-    margin-top:-50%;
-}
-.hero-sub {
+    margin-top: -50%;
+  }
+
+  .hero-sub {
     font-size: clamp(0.5rem, 4vw, 1.2rem);
     margin: 1rem 0 1.5rem;
-}
-.app-mocks{
-  order:1;
-  margin-bottom : 20%;
-}
-.app-copy{
-  order: 2;
-  margin-bottom : 20%;
-}
+  }
+
+  .app-mocks {
+    order: 1;
+    margin-bottom: 20%;
+  }
+
+  .app-copy {
+    order: 2;
+    margin-bottom: 20%;
+  }
 }
 
 
@@ -1537,62 +1540,76 @@ body {
     opacity: .7;
   }
 
-  /* .app-row {
-    align-items: flex-start;
-  } */
-
-  /* .app-mocks {
-    min-height: clamp(12rem, 40vw, 18rem);
-    margin-bottom: 1rem;
+  .app-band .row {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
   }
-
-  .app-mock {
-    max-width: 62%;
-  }
-
-  .app-mock--back {
-    top: 0;
-  }
-
-  .app-mock--front {
-    left: 26%;
-    top: 22%;
-  }
-
-  .app-download {
-    display: block;
-  }
-
-  .app-label {
-    display: block;
-    margin: 0 0 .5rem;
-  } */
 
   .app-mocks {
-    min-height: clamp(12rem, 45vw, 18rem);
+    min-height: auto;
+    margin: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
-  .phone {
-    width: 64%;
+  .phone-screen1 {
+    width: 50% !important;
   }
 
   .phone--back {
-    left: 0;
-    top: 2%;
+    --screen-left: 19.5%;
+    --screen-radius: 1rem;
   }
 
   .phone--front {
-    left: 26%;
-    top: 22%;
+    --screen-top: 45%;
+    --screen-left: 25%;
+  }
+
+  .phone {
+    position: relative;
+    width: 60%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .phone--back {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: scale(0.9);
+  }
+
+  .phone--front {
+    margin-top: 30%;
+    margin-bottom: -33%
+  }
+
+  .phone-frame {
+    width: 110%;
+  }
+
+  .phone-screen,
+  .phone-screen1 {
+    width: 66%;
+  }
+
+  .app-copy {
+    margin-bottom: 0rem;
   }
 
   .app-download {
-    display: block;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
-  .app-label {
-    display: block;
-    margin-bottom: .5rem;
+  .btn-store {
+    width: 80%;
+    max-width: 260px;
+    text-align: center;
   }
 
   .testi-track {
@@ -1625,15 +1642,13 @@ body {
     text-wrap: wrap;
   }
 
-
-
   .contact-card {
     transform: translateY(-17%);
-}
-  
+  }
 
-  .footer-panel{
-  margin-top: -19.5vh;
+
+  .footer-panel {
+    margin-top: -19.5vh;
   }
 
   .footer-top .col-sm-3 {
@@ -1694,16 +1709,15 @@ body {
 }
 
 @media (max-width: 1200px) {
-  .pgx-menu{
-  margin-left: 5%;
-  margin-top:0.5rem;
-} 
+  .pgx-menu {
+    margin-left: 5%;
+    margin-top: 0.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
-  .pgx-menu{
-  margin-left: 3%;
-  margin-top:0.5rem;
-} 
+  .pgx-menu {
+    margin-left: 3%;
+    margin-top: 0.5rem;
+  }
 }
-
