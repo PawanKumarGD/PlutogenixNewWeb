@@ -14,8 +14,37 @@
 </head>
 
 <body data-page="faqs">
-  <!-- Navbar -->
-  <div id="navbar-container"></div>
+  <!-- Navbar container -->
+  <div id="navbar-container">
+    <nav class="navbar navbar-default pgx-navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pgx-nav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/index.html">
+        <img src="assets/logo.png" alt="Plutogenix Logo">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="pgx-nav">
+      <ul class="nav navbar-nav pgx-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/ordertest.html">Order a Test</a></li>
+        <li><a href="/reportsandapp.html">Reports &amp; App</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/faqs.html">FAQs</a></li>
+      </ul>
+      <ul class="nav navbar-nav  navbar-right">
+        <li><a class="btn btn-login navbar-btn" href="/login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </div>
 
   <div class="order-container">
     <div class="order-inner1">
@@ -26,7 +55,7 @@
       <div class="fast">Fastest and easiest way to order a test.</div>
       <div class="report">Reports in 24 hours.</div>
       <div class="downloadbutt">
-        <a class="download" href="/index.html">Download App</a>
+        <a class="download" href="index.html">Download App</a>
       </div>
     </div>
   </div>
@@ -96,14 +125,115 @@
     <div class="tests-pager" id="pager-health"></div>
   </section>
 
-  <!-- Footer -->
-  <div id="footer-container"></div>
+  <!-- Footer container -->
+  <div id="footer-container">
+    <section id="contact" class="contact-wrap">
+    <!-- Overlapping contact card -->
+    <div class="container">
+        <div class="contact-card">
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    <img src="assets/mailbox.png" alt="Contact illustration" class="contact-ill">
+                </div>
+                <div class="col-sm-7">
+                    <h3 class="contact-title">Contact Us</h3>
+                    <form class="contact-form" action="#" method="post" novalidate>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email ID">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" name="phone" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="4" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-cta contact-btn">Order a Test</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer panel with rounded border -->
+    <div class="footer-panel">
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-sm-3">
+                    <img src="assets/logo.png" alt="Plutogenix" class="footer-logo">
+                    <p class="footer-blurb">India’s breed-smart veterinary diagnostics lab.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook" class="soc">f</a>
+                        <a href="#" aria-label="Instagram" class="soc">◎</a>
+                        <a href="#" aria-label="YouTube" class="soc">▶</a>
+                        <a href="#" aria-label="LinkedIn" class="soc">in</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-2 col-xs-6">
+                    <h5 class="footer-head">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#order">Book a Test</a></li>
+                        <li><a href="#app">Download App</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#faqs">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2 col-xs-6">
+                    <h5 class="footer-head">Tests</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Clinical Pathology</a></li>
+                        <li><a href="#">Microbiology</a></li>
+                        <li><a href="#">Histopathology</a></li>
+                        <li><a href="#">Toxicology</a></li>
+                        <li><a href="#">Endocrinology</a></li>
+                        <li><a href="#">Urinalysis</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2 col-xs-6">
+                    <h5 class="footer-head">Tests</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Serology &amp; Immunology</a></li>
+                        <li><a href="#">Molecular Diagnostics</a></li>
+                        <li><a href="#">Genetic Testing</a></li>
+                        <li><a href="#">Biochemical Genetics</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-3 col-xs-6">
+                    <h5 class="footer-head">Contact</h5>
+                    <ul class="footer-links">
+                        <li><span class="glyphicon glyphicon-earphone"></span> +91 989 456 7890</li>
+                        <li><span class="glyphicon glyphicon-envelope"> <span class="email">support@plutogenix.com</span></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row footer-bottom">
+                <div class="col-sm-6">
+                    <p class="copy">© <span id="year"></span> Plutogenix. All rights reserved.</p>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ul class="legal-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  </div>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script>
+  <!-- <script>
     // Load navbar.html into the container
     fetch('navbar.html')
       .then(r => r.text())
@@ -150,9 +280,11 @@
     fetch('footer.html').then(r => r.text()).then(html => {
       document.getElementById('footer-container').innerHTML = html;
       var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
-    });
+    }); -->
 
     // -------- FAQs interactions --------
+
+    <script>
     (function () {
       // Accordion toggle
       document.querySelectorAll('.faq-q').forEach(function (btn) {
