@@ -181,79 +181,111 @@
 
     <!-- pagination script -->
     <script>
-        (function () {
-            // Mobile behavior threshold: <= 48rem (768px)
-            const mql = window.matchMedia('(max-width: 48rem)');
+(function () {
+    // Mobile behavior threshold: <= 48rem (768px)
+    const mql = window.matchMedia('(max-width: 48rem)');
 
-            /**
-             * Paginates items so that on mobile only one is visible at a time with dots.
-             * On desktop, shows all items and hides the dots.
-             */
-            function paginator({ sectionSel, itemsSel, pagerId }) {
-                const section = document.querySelector(sectionSel);
-                if (!section) return;
+    /**
+     * Paginates items so that on mobile only one is visible at a time with dots.
+     * On desktop, shows all items and hides the dots.
+     */
+    function paginator({ sectionSel, itemsSel, pagerId, interval = 3000 }) {
+        const section = document.querySelector(sectionSel);
+        if (!section) return;
 
-                const pager = document.getElementById(pagerId);
-                if (!pager) return;
+        const pager = document.getElementById(pagerId);
+        if (!pager) return;
 
-                const allItems = Array.from(section.querySelectorAll(itemsSel));
-                if (!allItems.length) {
-                    pager.style.display = 'none';
-                    return;
-                }
+        const allItems = Array.from(section.querySelectorAll(itemsSel));
+        if (!allItems.length) {
+            pager.style.display = 'none';
+            return;
+        }
 
-                let page = 1;
-                const total = allItems.length;
+        let page = 1;
+        const total = allItems.length;
+        let timer = null;
 
-                function render() {
-                    const mobile = mql.matches;
+        function render() {
+            const mobile = mql.matches;
 
-                    if (!mobile) {
-                        // Desktop: show all cards and hide dots
-                        allItems.forEach(el => el.style.display = '');
-                        pager.style.display = 'none';
-                        return;
-                    }
-
-                    // Mobile: show one card and build dots
-                    pager.style.display = '';
-                    allItems.forEach(el => el.style.display = 'none');
-                    allItems[page - 1].style.display = '';
-
-                    pager.innerHTML = '';
-                    for (let i = 1; i <= total; i++) {
-                        const dot = document.createElement('button');
-                        dot.className = 'tests-pager-dot';
-                        dot.setAttribute('aria-label', `Go to card ${i}`);
-                        if (i === page) dot.setAttribute('aria-current', 'page');
-                        dot.addEventListener('click', () => { page = i; render(); });
-                        pager.appendChild(dot);
-                    }
-                }
-
-                // Re-render on breakpoint change
-                const onChange = () => render();
-                mql.addEventListener ? mql.addEventListener('change', onChange)
-                    : mql.addListener(onChange);
-
-                render();
+            if (!mobile) {
+                // Desktop: show all cards and hide dots
+                allItems.forEach(el => (el.style.display = ''));
+                pager.style.display = 'none';
+                stopAuto();
+                return;
             }
 
-            // Routine Tests: all cards in both rows
-            paginator({
-                sectionSel: '.routine-tests-main',
-                itemsSel: '.routine-tests-main-inner-service-box',
-                pagerId: 'routine-tests-pager'
-            });
+            // Mobile: show one card and build dots
+            pager.style.display = '';
+            allItems.forEach(el => (el.style.display = 'none'));
+            allItems[page - 1].style.display = '';
 
-            // Specialised Tests: all cards in its row
-            paginator({
-                sectionSel: '.specialised-tests-main',
-                itemsSel: '.specialised-tests-main-inner-service-box',
-                pagerId: 'specialised-tests-pager'
-            });
-        })();
-    </script>
+            pager.innerHTML = '';
+            for (let i = 1; i <= total; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'tests-pager-dot';
+                dot.setAttribute('aria-label', `Go to card ${i}`);
+                if (i === page) dot.setAttribute('aria-current', 'page');
+                dot.addEventListener('click', () => {
+                    page = i;
+                    render();
+                    restartAuto();
+                });
+                pager.appendChild(dot);
+            }
+        }
+
+        function nextPage() {
+            page = page < total ? page + 1 : 1;
+            render();
+        }
+
+        function startAuto() {
+            if (timer) clearInterval(timer);
+            timer = setInterval(nextPage, interval);
+        }
+
+        function stopAuto() {
+            if (timer) clearInterval(timer);
+            timer = null;
+        }
+
+        function restartAuto() {
+            stopAuto();
+            startAuto();
+        }
+
+        // Re-render on breakpoint change
+        const onChange = () => render();
+        if (mql.addEventListener) {
+            mql.addEventListener('change', onChange);
+        } else {
+            mql.addListener(onChange);
+        }
+
+        render();
+        startAuto();
+    }
+
+    // Routine Tests
+    paginator({
+        sectionSel: '.routine-tests-main',
+        itemsSel: '.routine-tests-main-inner-service-box',
+        pagerId: 'routine-tests-pager',
+        interval: 2000 // 4s per slide (change as needed)
+    });
+
+    // Specialised Tests
+    paginator({
+        sectionSel: '.specialised-tests-main',
+        itemsSel: '.specialised-tests-main-inner-service-box',
+        pagerId: 'specialised-tests-pager',
+        interval: 2000
+    });
+})();
+</script>
 
 </body>
 

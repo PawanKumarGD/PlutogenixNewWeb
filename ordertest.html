@@ -194,51 +194,74 @@
   </script>
 
   <!-- pagination script -->
-  <script>
-    (function () {
-      const mql = window.matchMedia('(max-width: 480px)'); // 768px
+<script>
+(function () {
+  const mql = window.matchMedia('(max-width: 480px)'); // mobile check
 
-      function makePager(sectionId, pagerId) {
-        const section = document.getElementById(sectionId);
-        if (!section) return;
+  function makePager(sectionId, pagerId, interval = 3000) { // interval in ms
+    const section = document.getElementById(sectionId);
+    if (!section) return;
 
-        const items = Array.from(section.querySelectorAll('.test-card'));
-        const pager = document.getElementById(pagerId);
-        if (!pager) return;
+    const items = Array.from(section.querySelectorAll('.test-card'));
+    const pager = document.getElementById(pagerId);
+    if (!pager) return;
 
-        let page = 1, total = items.length;
+    let page = 1,
+        total = items.length,
+        timer = null;
 
-        function render() {
-          const mobile = mql.matches;
-          if (!mobile) {
-            items.forEach(el => el.style.display = '');
-            pager.style.display = 'none';
-            return;
-          }
-
-          pager.style.display = '';
-          items.forEach(el => el.style.display = 'none');
-          items[page - 1].style.display = '';
-
-          pager.innerHTML = '';
-          for (let i = 1; i <= total; i++) {
-            const dot = document.createElement('button');
-            dot.setAttribute('aria-label', `Go to card ${i}`);
-            if (i === page) dot.setAttribute('aria-current', 'page');
-            dot.addEventListener('click', () => { page = i; render(); });
-            pager.appendChild(dot);
-          }
-        }
-
-        render();
-        mql.addEventListener('change', render);
+    function render() {
+      const mobile = mql.matches;
+      if (!mobile) {
+        items.forEach(el => el.style.display = '');
+        pager.style.display = 'none';
+        clearInterval(timer);
+        return;
       }
 
-      makePager('everyday-tests', 'pager-everyday');
-      makePager('ordered-tests', 'pager-ordered');
-      makePager('health-conditions', 'pager-health');
-    })();
-  </script>
+      pager.style.display = '';
+      items.forEach(el => (el.style.display = 'none'));
+      items[page - 1].style.display = '';
+
+      pager.innerHTML = '';
+      for (let i = 1; i <= total; i++) {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Go to card ${i}`);
+        if (i === page) dot.setAttribute('aria-current', 'page');
+        dot.addEventListener('click', () => {
+          page = i;
+          render();
+          restartAutoScroll();
+        });
+        pager.appendChild(dot);
+      }
+    }
+
+    function nextPage() {
+      page = page < total ? page + 1 : 1; // loop back to first
+      render();
+    }
+
+    function startAutoScroll() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(nextPage, interval);
+    }
+
+    function restartAutoScroll() {
+      clearInterval(timer);
+      startAutoScroll();
+    }
+
+    render();
+    mql.addEventListener('change', render);
+    startAutoScroll();
+  }
+
+  makePager('everyday-tests', 'pager-everyday');
+  makePager('ordered-tests', 'pager-ordered');
+  makePager('health-conditions', 'pager-health');
+})();
+</script>
 </body>
 
 </html>
