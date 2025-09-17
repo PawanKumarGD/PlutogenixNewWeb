@@ -43,9 +43,14 @@ body {
   padding: 1rem;
 }
 
-.pgx-menu>li>a:hover {
-  color: #ff7a1a !important;
+.pgx-menu li.active > a,
+.pgx-menu li > a:hover {
+  color: #ff7a1a !important; 
+  background-color: transparent !important;
+  font-weight: 700;
+  /* border-bottom: 2px solid #ff7a1a; */
 }
+
 
 .btn-login {
   background: #F15A22;

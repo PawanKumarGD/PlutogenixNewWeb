@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,8 +40,7 @@
 
         <!-- Center phone (single image file) -->
         <div class="col-xs-12 col-md-4 ra-phone-col">
-            <img src="assets/phone-hero.png" alt="Plutogenix mobile app"
-                 class="ra-phone" loading="lazy">
+          <img src="assets/phone-hero.png" alt="Plutogenix mobile app" class="ra-phone" loading="lazy">
         </div>
 
         <!-- Right features -->
@@ -57,14 +57,16 @@
               <img src="assets/ic-lock.svg" alt="" class="ra-ico">
               <div>
                 <h4>Secure Access</h4>
-                <p>Plutogenix™ is available 24×7 for emergencies or any diagnostic test or report-related queries, so you can be at peace.</p>
+                <p>Plutogenix™ is available 24×7 for emergencies or any diagnostic test or report-related queries, so
+                  you can be at peace.</p>
               </div>
             </li>
             <li>
               <img src="assets/ic-track.svg" alt="" class="ra-ico">
               <div>
                 <h4>Easy Tracking</h4>
-                <p>Book tests, schedule collection, track status, and receive reports at a thumb-tap on our mobile app.</p>
+                <p>Book tests, schedule collection, track status, and receive reports at a thumb-tap on our mobile app.
+                </p>
               </div>
             </li>
           </ul>
@@ -77,31 +79,31 @@
     <img src="assets/contactblob-left.svg" alt="" class="ra-blob ra-blob--right"> -->
   </section>
 
- <!-- ===== Section 2: Explore Diagnostic Tests ===== -->
-<section class="ra-cta">
-  <div class="container">
-    <div class="row middle-xs">
-      <!-- Text -->
-      <div class="col-xs-12 col-md-6 rta-cta-text">
-        <h2 class="ra-cta-title">Explore<br>Diagnostic Tests</h2>
-        <p class="ra-cta-lead">
-          Take a look at our veterinary diagnostics test menu to
-          explore and book a test for your pet.
-        </p>
-        <a href="services.html" class="btn ra-cta-btn"><span class="ra-cta-text">Explore</span></a>
-      </div>
+  <!-- ===== Section 2: Explore Diagnostic Tests ===== -->
+  <section class="ra-cta">
+    <div class="container">
+      <div class="row middle-xs">
+        <!-- Text -->
+        <div class="col-xs-12 col-md-6 rta-cta-text">
+          <h2 class="ra-cta-title">Explore<br>Diagnostic Tests</h2>
+          <p class="ra-cta-lead">
+            Take a look at our veterinary diagnostics test menu to
+            explore and book a test for your pet.
+          </p>
+          <a href="services.html" class="btn ra-cta-btn"><span class="ra-cta-text">Explore</span></a>
+        </div>
 
-      <!-- Image (single PNG) -->
-      <div class="col-xs-12 col-md-6 ra-cta-imgwrap">
-        <img src="assets/courier.png" alt="Courier holding a box" class="ra-cta-img">
+        <!-- Image (single PNG) -->
+        <div class="col-xs-12 col-md-6 ra-cta-imgwrap">
+          <img src="assets/courier.png" alt="Courier holding a box" class="ra-cta-img">
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Decorative blobs -->
-  <img src="assets/blob-left.svg"  alt="" class="ra-cta-blob ra-cta-blob--left">
-  <img src="assets/contactblob-left.svg" alt="" class="ra-cta-blob ra-cta-blob--right">
-</section>
+    <!-- Decorative blobs -->
+    <img src="assets/blob-left.svg" alt="" class="ra-cta-blob ra-cta-blob--left">
+    <img src="assets/contactblob-left.svg" alt="" class="ra-cta-blob ra-cta-blob--right">
+  </section>
 
   <!-- Footer -->
   <div id="footer-container"></div>
@@ -110,19 +112,47 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
-    // Load navbar and mark active
-    fetch('navbar.html').then(r => r.text()).then(html => {
-      document.getElementById('navbar-container').innerHTML = html;
-      (function ($) {
-        $('#pgx-nav a').on('click', function () {
-          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+    // Load navbar.html into the container
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const holder = document.getElementById('navbar-container');
+        holder.innerHTML = html;
+
+        // Collapse mobile menu on click (your code)
+        (function ($) {
+          $('#pgx-nav a').on('click', function () {
+            if ($('.navbar-toggle').is(':visible')) {
+              $('#pgx-nav').collapse('hide');
+            }
+          });
+        })(jQuery);
+
+        // ---- Active link highlight ----
+        function normalize(url) {
+          if (!url) return "";
+          var a = document.createElement("a");
+          a.href = url;
+          var p = a.pathname || "/";
+          if (p.slice(-1) === "/") p += "index.html";     // treat folder root as index.html
+          var f = p.split("/").pop().toLowerCase().split(/[?#]/)[0];
+          if (f && f.indexOf(".") === -1) f += ".html";
+          return f;
+        }
+
+        var current = normalize(location.href) || "index.html";
+
+        // Left-side nav
+        holder.querySelectorAll(".pgx-menu li").forEach(function (li) {
+          li.classList.remove("active");
+          var a = li.querySelector("a[href]");
+          if (!a) return;
+          if (normalize(a.getAttribute("href")) === current) {
+            li.classList.add("active");
+            a.setAttribute("aria-current", "page");
+          }
         });
-      })(jQuery);
-      var current = document.body.getAttribute('data-page') || '';
-      document.querySelectorAll('.pgx-menu > li').forEach(function (li) {
-        li.classList.toggle('active', li.getAttribute('data-page') === current);
       });
-    });
 
     // Load footer
     fetch('footer.html').then(r => r.text()).then(html => {
@@ -131,4 +161,5 @@
     });
   </script>
 </body>
+
 </html>

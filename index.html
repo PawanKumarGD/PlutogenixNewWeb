@@ -196,7 +196,7 @@
   <!-- Section 5: Breed-Specific vs General -->
   <section id="breed-specific" class="section breed-specific text-center">
     <div class="container">
-      <h2 class="breed-title">Breed-Specific<br>Vs General</h2>
+      <h2 class="breed-title">Breed-Specific<br>Vs. General</h2>
       <p class="breed-sub">
         Breed-smart diagnostics ensure accurate results, removes need for unnecessary tests,
         aligns treatment with specificity, builds confidence in long-term, evidence-based care.
@@ -212,44 +212,44 @@
   </section>
 
   <!-- Section: Reports & App -->
-<section id="app" class="app-band">
-  <div class="container">
-    <div class="row middle-xs">
-      <!-- Phones (left) -->
-      <div class="col-xs-12 col-md-6 app-mocks">
-        <!-- Back phone: screen PNG -->
-        <div class="phone phone--back">
-          <img src="assets/phoneback.svg" alt="" class="phone-frame">
-          <img src="assets/screenback.svg" alt="App screen" class="phone-screen">
+  <section id="app" class="app-band">
+    <div class="container">
+      <div class="row middle-xs">
+        <!-- Phones (left) -->
+        <div class="col-xs-12 col-md-6 app-mocks">
+          <!-- Back phone: screen PNG -->
+          <div class="phone phone--back">
+            <img src="assets/phoneback.svg" alt="" class="phone-frame">
+            <img src="assets/screenback.svg" alt="App screen" class="phone-screen">
+          </div>
+
+          <!-- Front phone: logo -->
+          <div class="phone phone--front">
+            <img src="assets/phonefront.svg" alt="" class="phone-frame">
+            <img src="assets/logo.png" alt="Plutogenix" class="phone-screen1">
+          </div>
         </div>
 
-        <!-- Front phone: logo -->
-        <div class="phone phone--front">
-          <img src="assets/phonefront.svg" alt="" class="phone-frame">
-          <img src="assets/logo.png" alt="Plutogenix" class="phone-screen1">
-        </div>
-      </div>
+        <!-- Copy (right) -->
+        <div class="col-xs-12 col-md-6 app-copy">
+          <h2 class="app-title">Accurate Reports.<br>Timely Delivery.</h2>
 
-      <!-- Copy (right) -->
-      <div class="col-xs-12 col-md-6 app-copy">
-        <h2 class="app-title">Accurate Reports.<br>Timely Delivery.</h2>
+          <p class="app-text">
+            Book tests for your pets and get your diagnostic reports when you need them.
+            Download the App for updates, reports, and offers.
+          </p>
 
-        <p class="app-text">
-          Book tests for your pets and get your diagnostic reports when you need them.
-          Download the App for updates, reports, and offers.
-        </p>
-
-        <div class="app-download">
-          <span class="app-label">Download App</span>
-          <a href="#" class="btn btn-store">
-            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-            Google Play Store
-          </a>
+          <div class="app-download">
+            <span class="app-label">Download App</span>
+            <a href="#" class="btn btn-store">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+              Google Play Store
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Section: Testimonials -->
@@ -360,14 +360,55 @@
 
   <!-- Load navbar dynamically -->
   <script>
-    fetch('navbar.html').then(r => r.text()).then(html => {
-      document.getElementById('navbar-container').innerHTML = html;
-      (function ($) {
-        $('#pgx-nav a').on('click', function () {
-          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+    // fetch('navbar.html').then(r => r.text()).then(html => {
+    //   document.getElementById('navbar-container').innerHTML = html;
+    //   (function ($) {
+    //     $('#pgx-nav a').on('click', function () {
+    //       if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+    //     });
+    //   })(jQuery);
+    // });
+    // Load navbar.html into the container
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const holder = document.getElementById('navbar-container');
+        holder.innerHTML = html;
+
+        // Collapse mobile menu on click (your code)
+        (function ($) {
+          $('#pgx-nav a').on('click', function () {
+            if ($('.navbar-toggle').is(':visible')) {
+              $('#pgx-nav').collapse('hide');
+            }
+          });
+        })(jQuery);
+
+        // ---- Active link highlight ----
+        function normalize(url) {
+          if (!url) return "";
+          var a = document.createElement("a");
+          a.href = url;
+          var p = a.pathname || "/";
+          if (p.slice(-1) === "/") p += "index.html";     // treat folder root as index.html
+          var f = p.split("/").pop().toLowerCase().split(/[?#]/)[0];
+          if (f && f.indexOf(".") === -1) f += ".html";
+          return f;
+        }
+
+        var current = normalize(location.href) || "index.html";
+
+        // Left-side nav
+        holder.querySelectorAll(".pgx-menu li").forEach(function (li) {
+          li.classList.remove("active");
+          var a = li.querySelector("a[href]");
+          if (!a) return;
+          if (normalize(a.getAttribute("href")) === current) {
+            li.classList.add("active");
+            a.setAttribute("aria-current", "page");
+          }
         });
-      })(jQuery);
-    });
+      });
 
     // Footer
     fetch('footer.html').then(r => r.text()).then(html => {

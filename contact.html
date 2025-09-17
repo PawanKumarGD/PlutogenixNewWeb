@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -41,7 +42,8 @@
 
         <div class="col-xs-12">
           <label>Messages</label>
-          <textarea class="form-control input-soft textarea-soft" rows="7" placeholder="Write your messages here"></textarea>
+          <textarea class="form-control input-soft textarea-soft" rows="7"
+            placeholder="Write your messages here"></textarea>
         </div>
 
         <div class="col-xs-12 text-center">
@@ -51,7 +53,7 @@
     </div>
 
     <!-- Decorative blobs -->
-    <img src="assets/contactblob-left.svg"  alt="" class="contact-blob contact-blob--left">
+    <img src="assets/contactblob-left.svg" alt="" class="contact-blob contact-blob--left">
     <img src="assets/contactblob-right.svg" alt="" class="contact-blob contact-blob--right">
   </section>
 
@@ -132,22 +134,51 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
-    // Load navbar and mark "Contact" as active
-    fetch('navbar.html').then(r => r.text()).then(html => {
-      document.getElementById('navbar-container').innerHTML = html;
-      (function ($) {
-        $('#pgx-nav a').on('click', function () {
-          if ($('.navbar-toggle').is(':visible')) { $('#pgx-nav').collapse('hide'); }
+    // Load navbar.html into the container
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const holder = document.getElementById('navbar-container');
+        holder.innerHTML = html;
+
+        // Collapse mobile menu on click (your code)
+        (function ($) {
+          $('#pgx-nav a').on('click', function () {
+            if ($('.navbar-toggle').is(':visible')) {
+              $('#pgx-nav').collapse('hide');
+            }
+          });
+        })(jQuery);
+
+        // ---- Active link highlight ----
+        function normalize(url) {
+          if (!url) return "";
+          var a = document.createElement("a");
+          a.href = url;
+          var p = a.pathname || "/";
+          if (p.slice(-1) === "/") p += "index.html";     // treat folder root as index.html
+          var f = p.split("/").pop().toLowerCase().split(/[?#]/)[0];
+          if (f && f.indexOf(".") === -1) f += ".html";
+          return f;
+        }
+
+        var current = normalize(location.href) || "index.html";
+
+        // Left-side nav
+        holder.querySelectorAll(".pgx-menu li").forEach(function (li) {
+          li.classList.remove("active");
+          var a = li.querySelector("a[href]");
+          if (!a) return;
+          if (normalize(a.getAttribute("href")) === current) {
+            li.classList.add("active");
+            a.setAttribute("aria-current", "page");
+          }
         });
-      })(jQuery);
-      var current = document.body.getAttribute('data-page') || '';
-      document.querySelectorAll('.pgx-menu > li').forEach(function (li) {
-        li.classList.toggle('active', li.getAttribute('data-page') === current);
       });
-    });
 
     // year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
