@@ -15,7 +15,36 @@
 
 <body data-page="contact">
   <!-- Navbar -->
-  <div id="navbar-container"></div>
+  <div id="navbar-container">
+    <nav class="navbar navbar-default pgx-navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pgx-nav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.png" alt="Plutogenix Logo">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="pgx-nav">
+      <ul class="nav navbar-nav pgx-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="ordertest.html">Order a Test</a></li>
+        <li><a href="reportsandapp.html">Reports &amp; App</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+      <ul class="nav navbar-nav  navbar-right">
+        <li><a class="btn btn-login navbar-btn" href="/login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </div>
 
   <!-- ===== Contact Section ===== -->
   <section class="contact-page">
@@ -149,8 +178,10 @@
             }
           });
         })(jQuery);
+    </script>
 
-        // ---- Active link highlight ----
+    // ---- Active link highlight ----
+    <script>
         function normalize(url) {
           if (!url) return "";
           var a = document.createElement("a");
