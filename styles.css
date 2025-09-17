@@ -122,6 +122,10 @@ body {
   border-radius: 15px !important;
 }
 
+.app-copy{
+  margin-top : 10%;
+}
+
 .btn-cta:hover {
   background: #ffb648;
 }
@@ -362,7 +366,7 @@ body {
 }
 
 .range-title {
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   font-size: clamp(1.8rem, 6vw, 3.6rem);
   margin: 0 0 1rem;
@@ -431,7 +435,7 @@ body {
 }
 
 .breed-title {
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(1.8rem, 5vw, 2.8rem);
   color: #e85d0f;
   /* brand orange */
@@ -567,7 +571,7 @@ body {
 
 /* --- Copy --- */
 .app-title {
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   margin: 0 0 .6rem;
   font-size: clamp(1.8rem, 4.8vw, 2.8rem);
