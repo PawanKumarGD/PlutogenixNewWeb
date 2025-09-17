@@ -164,6 +164,9 @@
   outline:.18rem solid #6aa8ff; outline-offset:.1rem;
 }
 
+.contact-card {
+      transform: translateY(-30%);
+}
 
 /* ============== RESPONSIVE ============== */
 
