@@ -17,33 +17,33 @@
   <!-- Navbar -->
   <div id="navbar-container">
     <nav class="navbar navbar-default pgx-navbar">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pgx-nav">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/logo.png" alt="Plutogenix Logo">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="pgx-nav">
-      <ul class="nav navbar-nav pgx-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="ordertest.html">Order a Test</a></li>
-        <li><a href="reportsandapp.html">Reports &amp; App</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="faqs.html">FAQs</a></li>
-      </ul>
-      <ul class="nav navbar-nav  navbar-right">
-        <li><a class="btn btn-login navbar-btn" href="login.html">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pgx-nav">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/logo.png" alt="Plutogenix Logo">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="pgx-nav">
+          <ul class="nav navbar-nav pgx-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="ordertest.html">Order a Test</a></li>
+            <li><a href="reportsandapp.html">Reports &amp; App</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+          <ul class="nav navbar-nav  navbar-right">
+            <li><a class="btn btn-login navbar-btn" href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
 
   <!-- ===== Contact Section ===== -->
@@ -138,7 +138,7 @@
         <div class="col-sm-3 col-xs-6">
           <h5 class="footer-head">Contact</h5>
           <ul class="footer-links">
-            <li><span class="glyphicon glyphicon-earphone"></span> +91 989 456 7890</li>
+            <li><span class="glyphicon glyphicon-earphone"></span> +91 987 171 5111</li>
             <li><span class="glyphicon glyphicon-envelope"> support@plutogenix.com</span></li>
           </ul>
         </div>
@@ -146,13 +146,13 @@
 
       <div class="row footer-bottom">
         <div class="col-sm-6">
-          <p class="copy">© <span id="year"></span> Plutogenix. All rights reserved.</p>
+          <p class="copy">© <span id="year">2025</span> Plutogenix. All rights reserved.</p>
         </div>
         <div class="col-sm-6 text-right">
           <ul class="legal-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Legal</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="termsofuse.html">Terms of Use</a></li>
+            <!-- <li><a href="#">Legal</a></li> -->
           </ul>
         </div>
       </div>
@@ -162,54 +162,8 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-    // Load navbar.html into the container
-    fetch('navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        const holder = document.getElementById('navbar-container');
-        holder.innerHTML = html;
 
-        // Collapse mobile menu on click (your code)
-        (function ($) {
-          $('#pgx-nav a').on('click', function () {
-            if ($('.navbar-toggle').is(':visible')) {
-              $('#pgx-nav').collapse('hide');
-            }
-          });
-        })(jQuery);
-    </script>
 
-    // ---- Active link highlight ----
-    <script>
-        function normalize(url) {
-          if (!url) return "";
-          var a = document.createElement("a");
-          a.href = url;
-          var p = a.pathname || "/";
-          if (p.slice(-1) === "/") p += "index.html";     // treat folder root as index.html
-          var f = p.split("/").pop().toLowerCase().split(/[?#]/)[0];
-          if (f && f.indexOf(".") === -1) f += ".html";
-          return f;
-        }
-
-        var current = normalize(location.href) || "index.html";
-
-        // Left-side nav
-        holder.querySelectorAll(".pgx-menu li").forEach(function (li) {
-          li.classList.remove("active");
-          var a = li.querySelector("a[href]");
-          if (!a) return;
-          if (normalize(a.getAttribute("href")) === current) {
-            li.classList.add("active");
-            a.setAttribute("aria-current", "page");
-          }
-        });
-      });
-
-    // year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 
 </html>

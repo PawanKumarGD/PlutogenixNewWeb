@@ -1442,6 +1442,27 @@ body {
   z-index: 1;
 }
 
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f58a21;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    display: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1;
+  }
+
+  #backToTop:hover {
+    background: #cf8f50;
+  }
+
+
 @media (max-width: 426px) {
   #hero-image {
     display: none;
