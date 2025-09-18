@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Site styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <style>
@@ -20,7 +20,7 @@
 }
 </style>
 
-<body>
+<body data-page="login">
 
     <!-- Navbar include -->
     <!-- Navbar container -->
@@ -33,7 +33,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/index.html">
+      <a class="navbar-brand" href="index.html">
         <img src="assets/logo.png" alt="Plutogenix Logo">
       </a>
     </div>
@@ -48,7 +48,7 @@
         <li><a href="faqs.html">FAQs</a></li>
       </ul>
       <ul class="nav navbar-nav  navbar-right">
-        <li><a class="btn btn-login navbar-btn" href="/login.html">Login</a></li>
+        <li><a class="btn btn-login navbar-btn" href="login.html">Login</a></li>
       </ul>
     </div>
   </div>
@@ -158,12 +158,12 @@
                 <div class="col-sm-2 col-xs-6">
                     <h5 class="footer-head">Company</h5>
                     <ul class="footer-links">
-                        <li><a href="#about">About us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#order">Book a Test</a></li>
-                        <li><a href="#app">Download App</a></li>
-                        <li><a href="#resources">Resources</a></li>
-                        <li><a href="#faqs">FAQs</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="ordertest.html">Book a Test</a></li>
+                        <li><a href="reportsandapp.html">Download App</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="FAQs.html">FAQs</a></li>
                     </ul>
                 </div>
 
@@ -237,7 +237,7 @@
             var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
         }); -->
 
-        // role pill toggle (purely visual)
+        <!-- // role pill toggle (purely visual)
         document.addEventListener('change', function (e) {
             if (e.target && e.target.name === 'role') {
                 [].forEach.call(document.querySelectorAll('.role-pill'), function (p) {
@@ -245,7 +245,7 @@
                 });
                 e.target.closest('.role-pill').classList.add('is-active');
             }
-        });
+        }); -->
     </script>
 </body>
 
