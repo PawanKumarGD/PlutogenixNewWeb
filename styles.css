@@ -1042,7 +1042,7 @@ body {
 /* links + primary button */
 .login-links {
   margin: .25rem 0 .7rem;
-  margin-left: 12rem;
+  margin-left: 9vw;
 }
 
 .login-link {
@@ -1720,4 +1720,8 @@ body {
     margin-left: 3%;
     margin-top: 0.5rem;
   }
+  .login-links {
+  margin: .25rem 0 .7rem;
+  margin-left: 4vw;
+}
 }
