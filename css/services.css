@@ -333,7 +333,7 @@
   color:#fff;
   width:100%;
   min-height: clamp(26rem, 70vh, 42rem);
-  background-image:url(assets/servicesHeroBanner.png);
+  background-image:url(/assets/servicesHeroBanner.png);
   background-size:cover;
   background-position:center;
   display:grid;
@@ -492,7 +492,7 @@
   min-height: clamp(28rem, 80vh, 48rem);
   display:flex; flex-direction:column;
   justify-content:center;
-  background-image:url(assets/whyAccuracyMatters.png);
+  background-image:url(/assets/whyAccuracyMatters.png);
   background-size:cover; background-position:center;
   gap: clamp(1rem, 2.6vw, 1.6rem);
   padding: clamp(2rem, 6vw, 3rem) clamp(6vw, 14vw, 12vw);
@@ -523,7 +523,7 @@
 .turnaround-promise-main{
   display:grid; grid-template-columns: 1fr 1fr; align-items:center;
   gap: var(--gap);
-  background-image:url(assets/servicePageBackgroundVector.png);
+  background-image:url(/assets/servicePageBackgroundVector.png);
   background-repeat:no-repeat;
   background-size: clamp(20rem, 46vw, 38rem);
   background-position: left clamp(1rem, 6vw, 3rem) top clamp(.4rem, 2vw, 1rem);
@@ -549,7 +549,7 @@
 /* ========= EXPLORE TEST MENU ========= */
 /* Background section */
 .explore-test-menu-main {
-  background: url("assets/ExploreTestMenuBackground.png") no-repeat center/cover;
+  background: url("/assets/ExploreTestMenuBackground.png") no-repeat center/cover;
   min-height: clamp(14rem, 50vh, 24rem);
   display: flex;
   align-items: center;
@@ -558,6 +558,7 @@
   margin-block: clamp(1rem, 4vh, 3rem);
   color: #fff;
   position: relative;
+  margin-bottom: 7rem;
 }
 
 /* Content wrapper */
