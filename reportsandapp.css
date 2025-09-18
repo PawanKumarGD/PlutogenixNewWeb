@@ -38,7 +38,7 @@
   border-radius:.6rem; border:none;
   box-shadow: 0 .2rem .8rem rgba(0,0,0,.12);
 }
-.btn-store:hover{ background:#F6B637; color:#3b170f !important; }
+.btn-store:hover{ background:#f0cf82; color:#3b170f !important; }
 .btn-store.alt{ background:#F6B637; }
 .btn-store.alt:hover{ background:#f0cf82; }
 
