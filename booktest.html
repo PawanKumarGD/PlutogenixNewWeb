@@ -2,278 +2,315 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Plutogenix | Book Test</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plutogenix | Book Test</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  <!-- <link rel="stylesheet" href="styles.css" /> -->
-  <link rel="stylesheet" href="ordertest.css" />
-  <link rel="stylesheet" href="booktest.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link rel="stylesheet" href="ordertest.css" />
+    <link rel="stylesheet" href="booktest.css" />
 </head>
 
 <body data-page="booktest">
-  <!-- Navbar container -->
-  <div id="navbar-container">
-    <nav class="navbar navbar-default pgx-navbar">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pgx-nav">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/logo.png" alt="Plutogenix Logo">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="pgx-nav">
-      <ul class="nav navbar-nav pgx-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="ordertest.html">Order a Test</a></li>
-        <li><a href="reportsandapp.html">Reports &amp; App</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="faqs.html">FAQs</a></li>
-      </ul>
-      <ul class="nav navbar-nav  navbar-right">
-        <li><a class="btn btn-login navbar-btn" href="login.html">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  </div>
-
-  <div class="order-container">
-    <div class="order-inner1">
-      <img src="assets/Maskgroup.png" alt="hand" class="order-inner" />
-    </div>
-    <div class="order-inner2">
-      <div class="book">Book A Test</div>
-      <div class="fast">Fastest and easiest way to order a test.</div>
-      </div>
-    </div>
-  </div>
-
-<!-- Form container -->
-  <main class="page">
-  <section class="card">
-      <div class="card__head">
-        <p class="lead">
-          Please confirm Bruzo’s details and upload the prescription.
-        </p>
-        <button class="btn btn--ghost">Edit</button>
-      </div>
-
-      <!-- Details grid -->
-      <form class="form" action="#" method="post">
-        <div class="grid">
-          <label class="field">
-            <span class="field__label">Pet’s Name</span>
-            <input class="field__input" type="text" value="Bruzo" placeholder="Enter pet’s name">
-          </label>
-
-          <label class="field">
-            <span class="field__label">Species</span>
-            <select class="field__input">
-              <option selected>Dog</option>
-              <option>Cat</option>
-              <option>Cow</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span class="field__label">Breed</span>
-            <select class="field__input">
-              <option selected>Golden Retriever</option>
-              <option>Labrador</option>
-              <option>German Shepherd</option>
-              <option>Beagle</option>
-              <option>Mixed</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span class="field__label">Age (in years)</span>
-            <select class="field__input">
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-              <option>5</option><option>6</option><option>7</option><option>8</option>
-              <option>9</option><option>10</option><option>11</option>
-              <option selected>12</option>
-              <option>13</option><option>14</option><option>15</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span class="field__label">Gender</span>
-            <select class="field__input">
-              <option selected>Male</option>
-              <option>Female</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span class="field__label">Weight (in kg)</span>
-            <select class="field__input">
-              <option>10</option><option>11</option><option>12</option>
-              <option selected>12.5</option>
-              <option>13</option><option>14</option><option>15</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span class="field__label">Height (in inches)</span>
-            <select class="field__input">
-              <option>19</option><option>20</option><option>21</option>
-              <option selected>21.5</option>
-              <option>22</option><option>23</option>
-            </select>
-          </label>
-
-          <!-- Spacer for balanced layout on large screens -->
-          <div class="grid__spacer" aria-hidden="true"></div>
-        </div>
-
-        <!-- Action row -->
-        <div class="actions">
-          <button type="button" class="btn">Upload Prescription</button>
-
-          <label class="field field--address">
-            <span class="sr-only">Address</span>
-            <input class="field__input field__input--address" type="text" placeholder="Choose Address" />
-          </label>
-
-          <button type="submit" class="btn">Submit</button>
-        </div>
-      </form>
-    </section>
-    </main>
-
-  <!-- Footer container -->
-  <div id="footer-container">
-    <div class="footer-panel">
-        <div class="container">
-            <div class="row footer-top">
-                <div class="col-sm-3">
-                    <img src="assets/logo.png" alt="Plutogenix" class="footer-logo">
-                    <p class="footer-blurb">India’s breed-smart veterinary diagnostics lab.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook" class="soc">f</a>
-                        <a href="https://www.instagram.com/plutogenix_gd/" aria-label="Instagram" class="soc">◎</a>
-                        <a href="#" aria-label="YouTube" class="soc">▶</a>
-                        <a href="#" aria-label="LinkedIn" class="soc">in</a>
-                    </div>
+    <!-- Navbar container -->
+    <div id="navbar-container">
+        <nav class="navbar navbar-default pgx-navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pgx-nav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/logo.png" alt="Plutogenix Logo">
+                    </a>
                 </div>
-
-                <div class="col-sm-2 col-xs-6">
-                    <h5 class="footer-head">Company</h5>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About us</a></li>
+                <div class="collapse navbar-collapse" id="pgx-nav">
+                    <ul class="nav navbar-nav pgx-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="ordertest.html">Book a Test</a></li>
-                        <li><a href="reportsandapp.html">Download App</a></li>
+                        <li><a href="ordertest.html">Order a Test</a></li>
+                        <li><a href="reportsandapp.html">Reports &amp; App</a></li>
                         <li><a href="resources.html">Resources</a></li>
                         <li><a href="faqs.html">FAQs</a></li>
                     </ul>
-                </div>
-
-                <div class="col-sm-2 col-xs-6">
-                    <h5 class="footer-head">Tests</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Clinical Pathology</a></li>
-                        <li><a href="#">Microbiology</a></li>
-                        <li><a href="#">Histopathology</a></li>
-                        <li><a href="#">Toxicology</a></li>
-                        <li><a href="#">Endocrinology</a></li>
-                        <li><a href="#">Urinalysis</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-sm-2 col-xs-6">
-                    <h5 class="footer-head">Tests</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Serology &amp; Immunology</a></li>
-                        <li><a href="#">Molecular Diagnostics</a></li>
-                        <li><a href="#">Genetic Testing</a></li>
-                        <li><a href="#">Biochemical Genetics</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-sm-3 col-xs-6">
-                    <h5 class="footer-head">Contact</h5>
-                    <ul class="footer-links">
-                        <li><span class="glyphicon glyphicon-earphone"></span> +91 987 171 5111</li>
-                        <li><span class="glyphicon glyphicon-envelope"> <span class="email">support@plutogenix.com</span></span></li>
+                    <ul class="nav navbar-nav  navbar-right">
+                        <li><a class="btn btn-login navbar-btn" href="login.html">Login</a></li>
                     </ul>
                 </div>
             </div>
+        </nav>
+    </div>
 
-            <div class="row footer-bottom">
-                <div class="col-sm-6">
-                    <p class="copy">© <span id="year">2025</span> Plutogenix. All rights reserved.</p>
+    <div class="order-container">
+        <div class="order-inner1">
+            <img src="assets/Maskgroup.png" alt="hand" class="order-inner" />
+        </div>
+        <div class="order-inner2">
+            <div class="book">Book A Test</div>
+            <div class="fast">Fastest and easiest way to order a test.</div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Form container -->
+    <main class="page">
+        <section class="card">
+            <div class="card__head">
+                <p class="lead">
+                    Please confirm Bruzo’s details and upload the prescription.
+                </p>
+                <button class="btn btn--ghost">Edit</button>
+            </div>
+
+            <!-- Details grid -->
+            <form class="form" action="#" method="post">
+                <div class="grid">
+                    <label class="field">
+                        <span class="field__label">Pet’s Name</span>
+                        <input class="field__input" type="text" value="Bruzo" placeholder="Enter pet’s name">
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label">Species</span>
+                        <select class="field__input">
+                            <option selected>Dog</option>
+                            <option>Cat</option>
+                            <option>Cow</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label">Breed</span>
+                        <select class="field__input">
+                            <option selected>Golden Retriever</option>
+                            <option>Labrador</option>
+                            <option>German Shepherd</option>
+                            <option>Beagle</option>
+                            <option>Mixed</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label">Age (in years)</span>
+                        <select class="field__input">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option selected>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label">Gender</span>
+                        <select class="field__input">
+                            <option selected>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label">Weight (in kg)</span>
+                        <select class="field__input">
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option selected>12.5</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label">Height (in inches)</span>
+                        <select class="field__input">
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option selected>21.5</option>
+                            <option>22</option>
+                            <option>23</option>
+                        </select>
+                    </label>
+
+                    <!-- Spacer for balanced layout on large screens -->
+                    <div class="grid__spacer" aria-hidden="true"></div>
                 </div>
-                <div class="col-sm-6 text-right">
-                    <ul class="legal-links">
-                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
-                        <li><a href="termsofuse.html">Terms of Use</a></li>
-                        <!-- <li><a href="#">Legal</a></li> -->
-                    </ul>
+
+                <!-- Action row -->
+                <div class="actions">
+                    <button type="button" class="btn">Upload Prescription</button>
+
+                    <label class="field field--address">
+                        <span class="sr-only">Address</span>
+                        <input class="field__input field__input--address" type="text" placeholder="Choose Address" />
+                    </label>
+
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer container -->
+    <div id="footer-container">
+        <div class="footer-panel">
+            <div class="container">
+                <div class="row footer-top">
+                    <div class="col-sm-3">
+                        <img src="assets/logo.png" alt="Plutogenix" class="footer-logo">
+                        <p class="footer-blurb">India’s breed-smart veterinary diagnostics lab.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook" class="soc">f</a>
+                            <a href="https://www.instagram.com/plutogenix_gd/" aria-label="Instagram" class="soc">◎</a>
+                            <a href="#" aria-label="YouTube" class="soc">▶</a>
+                            <a href="#" aria-label="LinkedIn" class="soc">in</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 col-xs-6">
+                        <h5 class="footer-head">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="ordertest.html">Book a Test</a></li>
+                            <li><a href="reportsandapp.html">Download App</a></li>
+                            <li><a href="resources.html">Resources</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-2 col-xs-6">
+                        <h5 class="footer-head">Tests</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Clinical Pathology</a></li>
+                            <li><a href="#">Microbiology</a></li>
+                            <li><a href="#">Histopathology</a></li>
+                            <li><a href="#">Toxicology</a></li>
+                            <li><a href="#">Endocrinology</a></li>
+                            <li><a href="#">Urinalysis</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-2 col-xs-6">
+                        <h5 class="footer-head">Tests</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Serology &amp; Immunology</a></li>
+                            <li><a href="#">Molecular Diagnostics</a></li>
+                            <li><a href="#">Genetic Testing</a></li>
+                            <li><a href="#">Biochemical Genetics</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-3 col-xs-6">
+                        <h5 class="footer-head">Contact</h5>
+                        <ul class="footer-links">
+                            <li><span class="glyphicon glyphicon-earphone"></span> +91 987 171 5111</li>
+                            <li><span class="glyphicon glyphicon-envelope"> <span
+                                        class="email">support@plutogenix.com</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row footer-bottom">
+                    <div class="col-sm-6">
+                        <p class="copy">© <span id="year">2025</span> Plutogenix. All rights reserved.</p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <ul class="legal-links">
+                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                            <li><a href="termsofuse.html">Terms of Use</a></li>
+                            <!-- <li><a href="#">Legal</a></li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        </section>
+        <!-- Back to Top Button -->
+        <a href="#" id="backToTop" title="Back to top">↑</a>
     </div>
-</section>
-  </div>
 
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- // -------- FAQs interactions -------- -->
 
     <script>
-    (function () {
-      // Accordion toggle
-      document.querySelectorAll('.faq-q').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var card = btn.parentElement;
-          var ans = card.querySelector('.faq-a');
-          var open = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', !open);
-          ans.style.display = open ? 'none' : 'block';
-          btn.querySelector('.faq-toggle').textContent = open ? '+' : '×';
-        });
-      });
+        (function () {
+            // Accordion toggle
+            document.querySelectorAll('.faq-q').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var card = btn.parentElement;
+                    var ans = card.querySelector('.faq-a');
+                    var open = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', !open);
+                    ans.style.display = open ? 'none' : 'block';
+                    btn.querySelector('.faq-toggle').textContent = open ? '+' : '×';
+                });
+            });
 
-      // Category filter
-      var tabs = document.querySelectorAll('.faqs-tabs li');
-      tabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          tabs.forEach(function (t) { t.classList.remove('is-active'); });
-          tab.classList.add('is-active');
-          var cat = tab.getAttribute('data-cat');
-          document.querySelectorAll('.faq-card').forEach(function (c) {
-            if (cat === 'all') { c.style.display = ''; return; }
-            var cats = (c.getAttribute('data-cat') || '').split(/\s+/);
-            c.style.display = cats.indexOf(cat) > -1 ? '' : 'none';
-          });
-        });
-      });
+            // Category filter
+            var tabs = document.querySelectorAll('.faqs-tabs li');
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) { t.classList.remove('is-active'); });
+                    tab.classList.add('is-active');
+                    var cat = tab.getAttribute('data-cat');
+                    document.querySelectorAll('.faq-card').forEach(function (c) {
+                        if (cat === 'all') { c.style.display = ''; return; }
+                        var cats = (c.getAttribute('data-cat') || '').split(/\s+/);
+                        c.style.display = cats.indexOf(cat) > -1 ? '' : 'none';
+                    });
+                });
+            });
 
-      // Search filter (client-side)
-      var input = document.getElementById('faqSearch');
-      input.addEventListener('input', function () {
-        var q = input.value.trim().toLowerCase();
-        document.querySelectorAll('.faq-card').forEach(function (c) {
-          var txt = c.textContent.toLowerCase();
-          c.style.display = txt.indexOf(q) > -1 ? '' : 'none';
+            // Search filter (client-side)
+            var input = document.getElementById('faqSearch');
+            input.addEventListener('input', function () {
+                var q = input.value.trim().toLowerCase();
+                document.querySelectorAll('.faq-card').forEach(function (c) {
+                    var txt = c.textContent.toLowerCase();
+                    c.style.display = txt.indexOf(q) > -1 ? '' : 'none';
+                });
+            });
+        })();
+    </script>
+    <script>
+        // Show button when scrolling down
+        const backToTop = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
         });
-      });
-    })();
-  </script>
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 </body>
 
 </html>
