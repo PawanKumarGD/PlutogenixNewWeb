@@ -257,6 +257,8 @@
                 </div>
             </div>
         </section>
+        <!-- Back to Top Button -->
+        <a href="#" id="backToTop" title="Back to top">↑</a>
     </div>
 
     <!-- Scripts -->
@@ -369,6 +371,23 @@
                 interval: 2000
             });
         })();
+    </script>
+        <script>
+        // Show button when scrolling down
+        const backToTop = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
 
 </body>
