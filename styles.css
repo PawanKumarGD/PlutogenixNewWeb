@@ -111,8 +111,8 @@ body {
   display: flex;
   align-items: center;
   overflow: hidden;
+ background: radial-gradient(circle at right center, #ff7a1f 0%, #d85a00 40%, #a94300 70%, #6b2a00 100%);
 }
-
 #hero-image {
   position: absolute;
   inset: 0;
