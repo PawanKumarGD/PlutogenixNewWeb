@@ -111,8 +111,9 @@ body {
   display: flex;
   align-items: center;
   overflow: hidden;
- background: radial-gradient(circle at right center, #ff7a1f 0%, #d85a00 40%, #a94300 70%, #6b2a00 100%);
+  background: radial-gradient(circle at right center, #ff7a1f 0%, #d85a00 40%, #a94300 70%, #6b2a00 100%);
 }
+
 #hero-image {
   position: absolute;
   inset: 0;
@@ -159,6 +160,8 @@ body {
 .btn-cta {
   background: linear-gradient(80deg, #F9AD32 5%, #F58A21 95%);
   color: #4A2015;
+  font-weight: 700;
+  padding: .8rem 1.6rem;
   border: 1px;
   border-radius: 15px !important;
 }
@@ -1442,25 +1445,25 @@ body {
   z-index: 1;
 }
 
-  #backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #f58a21;
-    color: #fff;
-    font-size: 22px;
-    padding: 10px 15px;
-    text-decoration: none;
-    text-align: center;
-    display: none;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 1;
-  }
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f58a21;
+  color: #fff;
+  font-size: 22px;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-align: center;
+  display: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
 
-  #backToTop:hover {
-    background: #cf8f50;
-  }
+#backToTop:hover {
+  background: #cf8f50;
+}
 
 
 @media (max-width: 426px) {
@@ -1741,8 +1744,9 @@ body {
     margin-left: 3%;
     margin-top: 0.5rem;
   }
+
   .login-links {
-  margin: .25rem 0 .7rem;
-  margin-left: 4vw;
-}
+    margin: .25rem 0 .7rem;
+    margin-left: 4vw;
+  }
 }
